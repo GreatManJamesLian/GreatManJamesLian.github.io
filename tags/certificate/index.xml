@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Proficiency on 冠勝的分享天地</title>
-    <link>https://blog.goodmanjameslian.com/categories/proficiency/</link>
-    <description>Recent content in Proficiency on 冠勝的分享天地</description>
+    <title>Certificate on 冠勝的分享天地</title>
+    <link>https://blog.goodmanjameslian.com/tags/certificate/</link>
+    <description>Recent content in Certificate on 冠勝的分享天地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 05 May 2024 21:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/categories/proficiency/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 May 2024 21:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/certificate/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows 安裝 OpenSSL</title>
       <link>https://blog.goodmanjameslian.com/blog/windows-install-openssl/</link>
@@ -15,15 +15,6 @@
       <guid>https://blog.goodmanjameslian.com/blog/windows-install-openssl/</guid>
       <description>前言 OpenSSL 為開源的加密套件，被廣泛應用於通訊、加密數據和證書管理等領域，在保護資料傳輸和確保資訊安全方面起到關鍵作用。
 操作步驟 至下列網站下載 Openssl，EXE 檔案 https://slproweb.com/products/Win32OpenSSL.html 下載完後，開啟安裝精靈，同意條款，點擊 Next 安裝路徑選擇預設即可，點擊 Next 選擇程式的捷徑，保持預設即可，點擊 Next Select Additional Tasks，預設即可，點擊 Next 確認並點擊 Install 鍵盤按下 Win+R，輸入 sysdm.</description>
-    </item>
-    
-    <item>
-      <title>建立 GCP Access key</title>
-      <link>https://blog.goodmanjameslian.com/blog/gcp-create-service-account-access-key/</link>
-      <pubDate>Sun, 07 Apr 2024 17:00:00 +0800</pubDate>
-      
-      <guid>https://blog.goodmanjameslian.com/blog/gcp-create-service-account-access-key/</guid>
-      <description>前言 當需要在程式或指令中對 Google Cloud Platform (GCP) 專案進行調整時，我們可以通過操作 GCP Console 來配置雲端環境。但是，為了讓程式能夠以適當的權限取得或修改所需資源，我們需要生成一組金鑰，通常稱為 Access key。</description>
     </item>
     
   </channel>
