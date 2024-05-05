@@ -14,7 +14,7 @@
       
       <guid>https://blog.goodmanjameslian.com/blog/windows-install-openssl/</guid>
       <description>前言 OpenSSL 為開源的加密套件，被廣泛應用於通訊、加密數據和證書管理等領域，在保護資料傳輸和確保資訊安全方面起到關鍵作用。
-操作步驟 至下列網站下載 Openssl，EXE 檔案 https://slproweb.com/products/Win32OpenSSL.html 下載完後，開啟安裝精靈，同意條款，點擊 Next 安裝路徑選擇預設即可，點擊 Next 選擇程式的捷徑，保持預設即可，點擊 Next Select Additional Tasks，預設即可，點擊 Next 確認並點擊 Install 鍵盤按下 Win+R，輸入 sysdm.</description>
+操作步驟 至下載頁面下載 Openssl，EXE 檔案 下載完後，開啟安裝精靈，同意條款，點擊 Next 安裝路徑選擇預設即可，點擊 Next 選擇程式的捷徑，保持預設即可，點擊 Next Select Additional Tasks，預設即可，點擊 Next 確認並點擊 Install 鍵盤按下 Win+R，輸入 sysdm.</description>
     </item>
     
     <item>
