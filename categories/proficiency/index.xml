@@ -6,7 +6,17 @@
     <description>Recent content in Proficiency on 冠勝的分享天地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 05 May 2024 21:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/categories/proficiency/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 May 2024 01:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/categories/proficiency/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IIS 匯入 PFX 格式憑證</title>
+      <link>https://blog.goodmanjameslian.com/blog/iis-import-pfx/</link>
+      <pubDate>Thu, 16 May 2024 01:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/iis-import-pfx/</guid>
+      <description>前言 Windows server 在企業中辦也不可或缺的角色，公司內部系統，大部分都是微軟提供的 AD 進行管理，AD 也是一個龐大且功能強大的工具，之後有機會，也可以分享一些有關 AD 的內容。
+此篇想要介紹，如何讓 Windows server 運行的 IIS 網頁服務，使用 SSL 憑證，提供用戶 HTTPS 網路安全傳輸環境。</description>
+    </item>
+    
     <item>
       <title>Windows 安裝 OpenSSL</title>
       <link>https://blog.goodmanjameslian.com/blog/windows-install-openssl/</link>
