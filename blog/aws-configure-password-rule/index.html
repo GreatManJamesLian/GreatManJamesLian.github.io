@@ -5,12 +5,12 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="點擊下去，會有好事發生">
+  <meta name="description" content="增加 AWS 帳號安全性">
   <meta name="author" content="冠勝">
   
   <meta property="og:image" content="/images/Two-hair.png">
-  <meta property="og:url" content="https://blog.goodmanjameslian.com/tags/iis/">
-  <meta property="og:type" content="tags">
+  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/aws-configure-password-rule/">
+  <meta property="og:type" content="post">
 
   
   <meta property="og:title" content="冠勝的分享天地">
@@ -133,121 +133,79 @@
 </header>
 <!-- /navigation -->
 
-
 <section class="section-sm">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 mb-5 mb-lg-0">
-        <div class="row">
-          
-          
-          <div class="col-md-12 mb-4">
-    <article class="card">
-        <div class="row">
-            <div class="col-md-6 order-md-1">
-                
-                <img src="https://blog.goodmanjameslian.com/images/post/iis-webserver.png" class="card-img-top" alt="IIS 匯入 PFX 格式憑證">
-                
-            </div>
-            <div class="col-md-6 order-md-2">
-                <div class="card-body px-0">
-                    
-                    <a href="/categories/proficiency"
-                        class="text-primary">Proficiency</a>
-                    
-                    <a href="https://blog.goodmanjameslian.com/blog/iis-import-pfx/" class="h5 d-block my-3">IIS 匯入 PFX 格式憑證</a>
-                    <div class="mb-3 post-meta">
-                        <span>By 冠勝</span>
-                        
-                        <span class="border-bottom border-primary px-2 mx-1"></span>
-                        <span>16 May 2024</span>
-                        
-                    </div>
-                    <p class="card-text">Windows server 順利運行 HTTPS 安全加密網站</p>
-                    <a href="https://blog.goodmanjameslian.com/blog/iis-import-pfx/" class="btn btn-outline-primary">read more</a>
-                </div>
-            </div>
-        </div>
-    </article>
-</div>
-
-          
-        </div>
-      </div>
-      
-      <div class="col-lg-4">
-  <div class="widgets">
-    
-    <div class="widget">
-      
-      <h4 class="widget-title">About Me</h4>
-      
-      <img src="https://blog.goodmanjameslian.com/images/Avatar-deer.jpg" alt=""
-        class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4">
-      
-      <p>大家好，我是連冠勝～ 目前致力於雲端產業（AWS、GCP），以及資安相關內容。性喜閱讀，偶爾分享書中觀點，雲端及資安的部分，若有興趣的話，也可以多多交流哦！</p>
-      <a href="https://blog.goodmanjameslian.com/about/" class="btn btn-outline-primary">Know More</a>
-      
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Category</h4>
-      <ul class="list-unstyled">
-        <li><a
-            href="/categories/proficiency/">Proficiency</a>
-        </li>
-        <li><a
-            href="/categories/reading/">Reading</a>
-        </li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Tag</h4>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/aws/">Aws</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/certificate/">Certificate</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/cloud/">Cloud</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/gcp/">Gcp</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/iis/">Iis</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/openssl/">Openssl</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/reading/">Reading</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/security/">Security</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/thought/">Thought</a></li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Social</h4>
-      <ul class="list-inline social-links">
+      <div class="col-lg-8 mx-auto">
         
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <img src="https://blog.goodmanjameslian.com/images/promotion.png" alt="" class="img-fluid">
-    </div>
-  </div>
-</div>
+        <a href="/categories/proficiency"
+          class="text-primary">Proficiency</a>
+        
+        <h1>AWS 設定密碼規則</h1>
+        <div class="mb-3 post-meta">
+          <span>By 冠勝</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>24 May 2024</span>
+          
+        </div>
+        <div class="content mb-5">
+          <h2 id="前言">前言</h2>
+<p>資安在企業中已是不可會缺的角色，尤其現在網路世界中，駭客如雨後春筍般找尋破口攻擊安全性不全的系統。</p>
+<p>基本的防護措施更是不可少，本篇介紹如何設定 AWS IAM 密碼規則，以及建議的規範，讓駭客不易破解使用者密碼。</p>
+<h2 id="先決條件">先決條件</h2>
+<ol>
+<li>登入之 AWS IAM 使用者需擁有管理 IAM 的權限</li>
+</ol>
+<h2 id="操作步驟">操作步驟</h2>
+<ol>
+<li>登入 AWS，至 IAM 服務的 &ldquo;Account settings&rdquo; 項目，在 &ldquo;Password policy&rdquo; 欄位點擊 &ldquo;Edit&rdquo;</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-PASSWORD-RULE/image1.png"
+         alt="Image" width="1000"/>
+</figure>
 
-      
-      
-      <div class="col-12 mt-5">
+<ol start="2">
+<li>
+<p>設定密碼規則，可依據 ISO 27001 規範進行設定，</p>
+<ul>
+<li>長度至少 8 碼</li>
+<li>至少有一個大寫英文字母</li>
+<li>至少有一個小寫英文字母</li>
+<li>至少有一個數字</li>
+<li>至少有一個特殊字元（!@#$%^&amp;*()_+-=[]{}|&rsquo;）</li>
+<li>90 天後過期，需更換密碼</li>
+<li>不可與前三次重複</li>
+</ul>
+<p>設定完成後點擊右下方 &ldquo;Save changes&rdquo;</p>
+</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-PASSWORD-RULE/image2.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="3">
+<li>可看到密碼規則設定成功～</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-PASSWORD-RULE/image3.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="4">
+<li>後續使用者登入時，會要求更新密碼，且符合所設定的密碼規則</li>
+</ol>
+<h2 id="結語">結語</h2>
+<p>嚴格的密碼規則是增加系統資安的第一步，還是有可能遭到駭客破解，所以設定二階段驗證也是非常重要的事情！之後會再說明如何在 AWS IAM 綁定 MFA。</p>
+<p>希望這篇文章能啟發您更進一步的學習和研究，感謝您耐心閱讀。如果您有任何相關問題或想要討論，請隨時寄信給我，我們一起來探討吧！</p>
+
+        </div>
+
+        
         
       </div>
     </div>
   </div>
 </section>
-
 
 
 

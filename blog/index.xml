@@ -8,6 +8,17 @@
     <language>zh-tw</language>
     <lastBuildDate>Tue, 29 Oct 2019 13:49:23 +0600</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>AWS 設定密碼規則</title>
+      <link>https://blog.goodmanjameslian.com/blog/aws-configure-password-rule/</link>
+      <pubDate>Fri, 24 May 2024 01:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/aws-configure-password-rule/</guid>
+      <description>前言 資安在企業中已是不可會缺的角色，尤其現在網路世界中，駭客如雨後春筍般找尋破口攻擊安全性不全的系統。
+基本的防護措施更是不可少，本篇介紹如何設定 AWS IAM 密碼規則，以及建議的規範，讓駭客不易破解使用者密碼。
+先決條件 登入之 AWS IAM 使用者需擁有管理 IAM 的權限 操作步驟 登入 AWS，至 IAM 服務的 &amp;ldquo;Account settings&amp;rdquo; 項目，在 &amp;ldquo;Password policy&amp;rdquo; 欄位點擊 &amp;ldquo;Edit&amp;rdquo; 設定密碼規則，可依據 ISO 27001 規範進行設定，</description>
+    </item>
+    
+    <item>
       <title>IIS 匯入 PFX 格式憑證</title>
       <link>https://blog.goodmanjameslian.com/blog/iis-import-pfx/</link>
       <pubDate>Thu, 16 May 2024 01:00:00 +0800</pubDate>
