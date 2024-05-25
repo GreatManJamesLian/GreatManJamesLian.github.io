@@ -9,7 +9,7 @@
   <meta name="author" content="冠勝">
   
   <meta property="og:image" content="/images/Two-hair.png">
-  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/aws-configure-password-rule/">
+  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/aws-configure-mfa/">
   <meta property="og:type" content="post">
 
   
@@ -141,61 +141,78 @@
         <a href="/categories/proficiency"
           class="text-primary">Proficiency</a>
         
-        <h1>AWS 設定密碼規則</h1>
+        <h1>AWS 設定二階段驗證</h1>
         <div class="mb-3 post-meta">
           <span>By 冠勝</span>
           
           <span class="border-bottom border-primary px-2 mx-1"></span>
-          <span>24 May 2024</span>
+          <span>25 May 2024</span>
           
         </div>
         <div class="content mb-5">
           <h2 id="前言">前言</h2>
 <p>資安在企業中已是不可會缺的角色，尤其現在網路世界中，駭客如雨後春筍般找尋破口攻擊安全性不全的系統。</p>
-<p>基本的防護措施更是不可少，本篇介紹如何設定 AWS IAM 密碼規則，以及建議的規範，讓駭客不易破解使用者密碼。</p>
+<p>上一篇說明如何<a href="https://blog.goodmanjameslian.com/blog/aws-configure-password-rule/">設定 AWS 帳號的密碼規則</a>，使駭客無法輕易破解，接下來說明如何綁定二階段驗證，以進一步加強資安防範。</p>
+<p>本篇以綁定行動裝置二階段驗證的應用程式為範例進行操作。</p>
 <h2 id="先決條件">先決條件</h2>
 <ol>
 <li>登入之 AWS IAM 使用者需擁有管理 IAM 的權限</li>
+<li>手機已安裝二階段驗證相關應用程式，如 Authy、Google Authenticator&hellip;等</li>
 </ol>
 <h2 id="操作步驟">操作步驟</h2>
 <ol>
-<li>登入 AWS，至 IAM 服務的 &ldquo;Account settings&rdquo; 項目，在 &ldquo;Password policy&rdquo; 欄位點擊 &ldquo;Edit&rdquo;</li>
+<li>登入 AWS，至 IAM 服務的 &ldquo;Users&rdquo; 項目，點擊需要設定二階段驗證的 IAM User</li>
 </ol>
-<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-PASSWORD-RULE/image1.png"
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-MFA/image1.png"
          alt="Image" width="1000"/>
 </figure>
 
 <ol start="2">
-<li>
-<p>設定密碼規則，可依據 ISO 27001 規範進行設定，</p>
-<ul>
-<li>長度至少 8 碼</li>
-<li>至少有一個大寫英文字母</li>
-<li>至少有一個小寫英文字母</li>
-<li>至少有一個數字</li>
-<li>至少有一個特殊字元（!@#$%^&amp;*()_+-=[]{}|&rsquo;）</li>
-<li>90 天後過期，需更換密碼</li>
-<li>不可與前三次重複</li>
-</ul>
-<p>設定完成後點擊右下方 &ldquo;Save changes&rdquo;</p>
-</li>
+<li>到 &ldquo;Security credentials&rdquo; 項目，&ldquo;Multi-factor authentication (MFA)&rdquo; 欄位，點擊 &ldquo;Assign MFA device&rdquo;</li>
 </ol>
-<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-PASSWORD-RULE/image2.png"
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-MFA/image2.png"
          alt="Image" width="1000"/>
 </figure>
 
 <ol start="3">
-<li>可看到密碼規則設定成功～</li>
+<li>輸入裝置名稱，選擇 &ldquo;Authenticator app&rdquo;，點擊 &ldquo;Next&rdquo;</li>
 </ol>
-<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-PASSWORD-RULE/image3.png"
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-MFA/image3.png"
          alt="Image" width="1000"/>
 </figure>
 
 <ol start="4">
-<li>後續使用者登入時，會要求更新密碼，且符合所設定的密碼規則</li>
+<li>開啟行動裝置的二階段應用程式，掃描螢幕上的 QR Code</li>
 </ol>
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-MFA/image4.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="5">
+<li>行動裝置彈跳出視窗，為此二階段驗證設定方便記憶的名稱，點擊 &ldquo;Save&rdquo;</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-MFA/image5.png"
+         alt="Image" width="400"/>
+</figure>
+
+<ol start="6">
+<li>行動裝置畫面上出現的數字碼，寫入至 AWS 介面的欄位，第二個欄位需等下一組數字碼出現後填寫，填寫完後點擊 &ldquo;Add MFA&rdquo;</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-MFA/image6.png"
+         alt="Image" width="400"/>
+</figure>
+
+<ol start="7">
+<li>螢幕上方顯示指派成功的提醒，代表成功綁定二階段驗證，下次登入此帳號，除了輸入帳號密碼，還需要透過行動裝置提供的數字碼進行驗證囉～</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-MFA/image7.png"
+         alt="Image" width="1000"/>
+</figure>
+
 <h2 id="結語">結語</h2>
-<p>嚴格的密碼規則是增加系統資安的第一步，但以現在網路發達的年代，其實並不夠嚴謹，設定二階段驗證較能落實資安防範，之後會再說明如何在 AWS IAM 綁定 MFA。</p>
+<p>駭客攻擊手段日新月異，即使我們實施許多資安措施，也無法保證完全抵擋所有威脅。</p>
+<p>然而，我們仍能通過加強資安防護，增加駭客侵害系統的難度並提升保障。二階段驗證是一個非常有效的安全工具，能顯著提高系統的安全性。</p>
+<p>簡而言之，隨時保有資安意識，才是防範攻擊最關鍵的一步。</p>
 <p>希望這篇文章能啟發您更進一步的學習和研究，感謝您耐心閱讀。如果您有任何相關問題或想要討論，請隨時寄信給我，我們一起來探討吧！</p>
 
         </div>

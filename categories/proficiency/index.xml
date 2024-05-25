@@ -6,7 +6,19 @@
     <description>Recent content in Proficiency on 冠勝的分享天地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 24 May 2024 01:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/categories/proficiency/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 May 2024 11:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/categories/proficiency/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS 設定二階段驗證</title>
+      <link>https://blog.goodmanjameslian.com/blog/aws-configure-mfa/</link>
+      <pubDate>Sat, 25 May 2024 11:30:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/aws-configure-mfa/</guid>
+      <description>前言 資安在企業中已是不可會缺的角色，尤其現在網路世界中，駭客如雨後春筍般找尋破口攻擊安全性不全的系統。
+上一篇說明如何設定 AWS 帳號的密碼規則，使駭客無法輕易破解，接下來說明如何綁定二階段驗證，以進一步加強資安防範。
+本篇以綁定行動裝置二階段驗證的應用程式為範例進行操作。
+先決條件 登入之 AWS IAM 使用者需擁有管理 IAM 的權限 手機已安裝二階段驗證相關應用程式，如 Authy、Google Authenticator&amp;hellip;等 操作步驟 登入 AWS，至 IAM 服務的 &amp;ldquo;Users&amp;rdquo; 項目，點擊需要設定二階段驗證的 IAM User 到 &amp;ldquo;Security credentials&amp;rdquo; 項目，&amp;ldquo;Multi-factor authentication (MFA)&amp;rdquo; 欄位，點擊 &amp;ldquo;Assign MFA device&amp;rdquo; 輸入裝置名稱，選擇 &amp;ldquo;Authenticator app&amp;rdquo;，點擊 &amp;ldquo;Next&amp;rdquo; 開啟行動裝置的二階段應用程式，掃描螢幕上的 QR Code 行動裝置彈跳出視窗，為此二階段驗證設定方便記憶的名稱，點擊 &amp;ldquo;Save&amp;rdquo; 行動裝置畫面上出現的數字碼，寫入至 AWS 介面的欄位，第二個欄位需等下一組數字碼出現後填寫，填寫完後點擊 &amp;ldquo;Add MFA&amp;rdquo; 螢幕上方顯示指派成功的提醒，代表成功綁定二階段驗證，下次登入此帳號，除了輸入帳號密碼，還需要透過行動裝置提供的數字碼進行驗證囉～ 結語 駭客攻擊手段日新月異，即使我們實施許多資安措施，也無法保證完全抵擋所有威脅。</description>
+    </item>
+    
     <item>
       <title>AWS 設定密碼規則</title>
       <link>https://blog.goodmanjameslian.com/blog/aws-configure-password-rule/</link>
