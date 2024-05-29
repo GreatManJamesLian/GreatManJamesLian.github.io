@@ -6,7 +6,34 @@
     <description>Recent content in Tags on 冠勝的分享天地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 25 May 2024 11:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 May 2024 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Backup</title>
+      <link>https://blog.goodmanjameslian.com/tags/backup/</link>
+      <pubDate>Thu, 30 May 2024 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/tags/backup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloud</title>
+      <link>https://blog.goodmanjameslian.com/tags/cloud/</link>
+      <pubDate>Thu, 30 May 2024 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GCP</title>
+      <link>https://blog.goodmanjameslian.com/tags/gcp/</link>
+      <pubDate>Thu, 30 May 2024 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/tags/gcp/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>AWS</title>
       <link>https://blog.goodmanjameslian.com/tags/aws/</link>
@@ -49,24 +76,6 @@
       <pubDate>Sun, 05 May 2024 21:30:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/tags/openssl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cloud</title>
-      <link>https://blog.goodmanjameslian.com/tags/cloud/</link>
-      <pubDate>Sun, 07 Apr 2024 17:00:00 +0800</pubDate>
-      
-      <guid>https://blog.goodmanjameslian.com/tags/cloud/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GCP</title>
-      <link>https://blog.goodmanjameslian.com/tags/gcp/</link>
-      <pubDate>Sun, 07 Apr 2024 17:00:00 +0800</pubDate>
-      
-      <guid>https://blog.goodmanjameslian.com/tags/gcp/</guid>
       <description></description>
     </item>
     

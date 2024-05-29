@@ -5,12 +5,12 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="點擊下去，會有好事發生">
+  <meta name="description" content="確保系統持續營運">
   <meta name="author" content="冠勝">
   
   <meta property="og:image" content="/images/Two-hair.png">
-  <meta property="og:url" content="https://blog.goodmanjameslian.com/tags/openssl/">
-  <meta property="og:type" content="tags">
+  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/gcp-configure-snapshot-schedule/">
+  <meta property="og:type" content="post">
 
   
   <meta property="og:title" content="冠勝的分享天地">
@@ -133,123 +133,115 @@
 </header>
 <!-- /navigation -->
 
-
 <section class="section-sm">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 mb-5 mb-lg-0">
-        <div class="row">
-          
-          
-          <div class="col-md-12 mb-4">
-    <article class="card">
-        <div class="row">
-            <div class="col-md-6 order-md-1">
-                
-                <img src="https://blog.goodmanjameslian.com/images/post/lock-openssl.jpg" class="card-img-top" alt="Windows 安裝 OpenSSL">
-                
-            </div>
-            <div class="col-md-6 order-md-2">
-                <div class="card-body px-0">
-                    
-                    <a href="/categories/proficiency"
-                        class="text-primary">Proficiency</a>
-                    
-                    <a href="https://blog.goodmanjameslian.com/blog/windows-install-openssl/" class="h5 d-block my-3">Windows 安裝 OpenSSL</a>
-                    <div class="mb-3 post-meta">
-                        <span>By 冠勝</span>
-                        
-                        <span class="border-bottom border-primary px-2 mx-1"></span>
-                        <span>05 May 2024</span>
-                        
-                    </div>
-                    <p class="card-text">HTTPS 憑證需要透過 OpenSSL 產生</p>
-                    <a href="https://blog.goodmanjameslian.com/blog/windows-install-openssl/" class="btn btn-outline-primary">read more</a>
-                </div>
-            </div>
-        </div>
-    </article>
-</div>
-
-          
-        </div>
-      </div>
-      
-      <div class="col-lg-4">
-  <div class="widgets">
-    
-    <div class="widget">
-      
-      <h4 class="widget-title">About Me</h4>
-      
-      <img src="https://blog.goodmanjameslian.com/images/Avatar-deer.jpg" alt=""
-        class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4">
-      
-      <p>大家好，我是連冠勝～ 目前致力於雲端產業（AWS、GCP），以及資安相關內容。性喜閱讀，偶爾分享書中觀點，雲端及資安的部分，若有興趣的話，也可以多多交流哦！</p>
-      <a href="https://blog.goodmanjameslian.com/about/" class="btn btn-outline-primary">Know More</a>
-      
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Category</h4>
-      <ul class="list-unstyled">
-        <li><a
-            href="/categories/proficiency/">Proficiency</a>
-        </li>
-        <li><a
-            href="/categories/reading/">Reading</a>
-        </li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Tag</h4>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/aws/">Aws</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/backup/">Backup</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/certificate/">Certificate</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/cloud/">Cloud</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/gcp/">Gcp</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/iis/">Iis</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/openssl/">Openssl</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/reading/">Reading</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/security/">Security</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/thought/">Thought</a></li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Social</h4>
-      <ul class="list-inline social-links">
+      <div class="col-lg-8 mx-auto">
         
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <img src="https://blog.goodmanjameslian.com/images/promotion.png" alt="" class="img-fluid">
-    </div>
-  </div>
-</div>
+        <a href="/categories/proficiency"
+          class="text-primary">Proficiency</a>
+        
+        <h1>GCP GCE 設定自動備份排程</h1>
+        <div class="mb-3 post-meta">
+          <span>By 冠勝</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>30 May 2024</span>
+          
+        </div>
+        <div class="content mb-5">
+          <h2 id="前言">前言</h2>
+<p>保險的功用在於應付未來不確定性風險的一種管理手段，能夠保障人們未來正常的生活。</p>
+<p>定期備份就像是保險，在充滿不確定的網路世界中，保障系統未來正常的運作。</p>
+<p>以下說明 GCP GCE 設定自動備份排程的流程～</p>
+<p><strong>由於部分內容涉及敏感信息，所以選擇在文章中加以遮蔽。</strong></p>
+<h2 id="先決條件">先決條件</h2>
+<ol>
+<li>登入 GCP 之 Google 帳號需擁有管理 GCE 的權限</li>
+</ol>
+<h2 id="操作步驟">操作步驟</h2>
+<ol>
+<li>至 GCE 介面，點選要設定 Snapshot schedule 的機器</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/GCP-CONFIGURE-SNAPSHOT-SCHEDULE/image1.png"
+         alt="Image" width="1000"/>
+</figure>
 
-      
-      
-      <div class="col-12 mt-5">
+<ol start="2">
+<li>下滑到 &ldquo;Storage&rdquo; 項目，點擊磁碟機的名稱</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/GCP-CONFIGURE-SNAPSHOT-SCHEDULE/image2.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="3">
+<li>到磁碟機管理介面，點擊右上方 &ldquo;EDIT&rdquo;</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/GCP-CONFIGURE-SNAPSHOT-SCHEDULE/image3.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="4">
+<li>&ldquo;Snapshot schedule&rdquo; 項目，點擊 &ldquo;CREATE A SCHEDULE&rdquo;</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/GCP-CONFIGURE-SNAPSHOT-SCHEDULE/image4.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="5">
+<li>依照建立 snapshot schedule 的設定進行說明
+<ul>
+<li>Name：為備份排程取名稱</li>
+<li>Description：描述此排程</li>
+<li>Snapshot storage location：選擇 Snapshot 儲存的地方，可選擇多區域存放，或是單一區域存放</li>
+<li>Schedule options：設定排程的頻率、執行時間、以及自動刪除 Snapshot 的時間，執行時間的時區是以 <strong>UTC+0</strong> 為準，若所在時區不是 UTC+0，需要<strong>扣除時區的差距</strong>。以台灣為例，台灣為 UTC+8，所以設定上需要扣掉 8 小時</li>
+<li>Deletion rule：若是此備份排程綁定的磁碟機被刪除，此排程需要做什麼動作，繼續執行或是刪除超過七天的 Snapshot</li>
+<li>Application consostency：是否需要等待所有寫入作業完成，再執行備份程序，不啟用此選項，正在等待寫入的程序，不會備份到 Snapshot 內。通常此設定不需要勾選</li>
+<li>Snapshot labels：可為此排程設置標籤，方便後續管理</li>
+</ul>
+</li>
+</ol>
+<p>設定完成後，點擊 &ldquo;CREATE&rdquo;</p>
+<figure class="image-frame"><img src="/images/post/GCP-CONFIGURE-SNAPSHOT-SCHEDULE/image5.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="6">
+<li>
+<p>回到磁碟機編輯畫面，點擊下方 &ldquo;SAVE&rdquo;
+<figure class="image-frame"><img src="/images/post/GCP-CONFIGURE-SNAPSHOT-SCHEDULE/image6.png"
+         alt="Image" width="1000"/>
+</figure>
+</p>
+</li>
+<li>
+<p>可看到 &ldquo;Snapshot schedule&rdquo; 欄位有顯示剛剛建立的排程名稱，代表成功設定好自動備份排程囉！</p>
+</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/GCP-CONFIGURE-SNAPSHOT-SCHEDULE/image7.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="8">
+<li>過了自動排程時間之後，查看 &ldquo;Snapshots&rdquo; 介面，可看到有建立 Snapshot</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/GCP-CONFIGURE-SNAPSHOT-SCHEDULE/image8.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<h2 id="結語">結語</h2>
+<p>以上為 GCP GCE 自動備份排程的設定流程，確保企業或個人系統在發生緊急故障時，能夠迅速還原備份內容，以最短時間內恢復系統，達成營運持續的目標。</p>
+<p>事不宜遲，趕緊去設定備份排程吧！</p>
+<p>希望這篇文章能啟發您更進一步的學習和研究，感謝您耐心閱讀。如果您有任何相關問題或想要討論，請隨時寄信給我，我們一起來探討吧！</p>
+
+        </div>
+
+        
         
       </div>
     </div>
   </div>
 </section>
-
 
 
 

@@ -6,7 +6,43 @@
     <description>Recent content in Cloud on 冠勝的分享天地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 07 Apr 2024 17:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 May 2024 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GCP GCE 設定自動備份排程</title>
+      <link>https://blog.goodmanjameslian.com/blog/gcp-configure-snapshot-schedule/</link>
+      <pubDate>Thu, 30 May 2024 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/gcp-configure-snapshot-schedule/</guid>
+      <description>前言 保險的功用在於應付未來不確定性風險的一種管理手段，能夠保障人們未來正常的生活。
+定期備份就像是保險，在充滿不確定的網路世界中，保障系統未來正常的運作。
+以下說明 GCP GCE 設定自動備份排程的流程～
+由於部分內容涉及敏感信息，所以選擇在文章中加以遮蔽。
+先決條件 登入 GCP 之 Google 帳號需擁有管理 GCE 的權限 操作步驟 至 GCE 介面，點選要設定 Snapshot schedule 的機器 下滑到 &amp;ldquo;Storage&amp;rdquo; 項目，點擊磁碟機的名稱 到磁碟機管理介面，點擊右上方 &amp;ldquo;EDIT&amp;rdquo; &amp;ldquo;Snapshot schedule&amp;rdquo; 項目，點擊 &amp;ldquo;CREATE A SCHEDULE&amp;rdquo; 依照建立 snapshot schedule 的設定進行說明 Name：為備份排程取名稱 Description：描述此排程 Snapshot storage location：選擇 Snapshot 儲存的地方，可選擇多區域存放，或是單一區域存放 Schedule options：設定排程的頻率、執行時間、以及自動刪除 Snapshot 的時間，執行時間的時區是以 UTC+0 為準，若所在時區不是 UTC+0，需要扣除時區的差距。以台灣為例，台灣為 UTC+8，所以設定上需要扣掉 8 小時 Deletion rule：若是此備份排程綁定的磁碟機被刪除，此排程需要做什麼動作，繼續執行或是刪除超過七天的 Snapshot Application consostency：是否需要等待所有寫入作業完成，再執行備份程序，不啟用此選項，正在等待寫入的程序，不會備份到 Snapshot 內。通常此設定不需要勾選 Snapshot labels：可為此排程設置標籤，方便後續管理 設定完成後，點擊 &amp;ldquo;CREATE&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>AWS 設定二階段驗證</title>
+      <link>https://blog.goodmanjameslian.com/blog/aws-configure-mfa/</link>
+      <pubDate>Sat, 25 May 2024 11:30:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/aws-configure-mfa/</guid>
+      <description>前言 資安在企業中已是不可會缺的角色，尤其現在網路世界中，駭客如雨後春筍般找尋破口攻擊安全性不全的系統。
+上一篇說明如何設定 AWS 帳號的密碼規則，使駭客無法輕易破解，接下來說明如何綁定二階段驗證，以進一步加強資安防範。
+本篇以綁定行動裝置二階段驗證的應用程式為範例進行操作。
+先決條件 登入之 AWS IAM 使用者需擁有管理 IAM 的權限 手機已安裝二階段驗證相關應用程式，如 Authy、Google Authenticator&amp;hellip;等 操作步驟 登入 AWS，至 IAM 服務的 &amp;ldquo;Users&amp;rdquo; 項目，點擊需要設定二階段驗證的 IAM User 到 &amp;ldquo;Security credentials&amp;rdquo; 項目，&amp;ldquo;Multi-factor authentication (MFA)&amp;rdquo; 欄位，點擊 &amp;ldquo;Assign MFA device&amp;rdquo; 輸入裝置名稱，選擇 &amp;ldquo;Authenticator app&amp;rdquo;，點擊 &amp;ldquo;Next&amp;rdquo; 開啟行動裝置的二階段應用程式，掃描螢幕上的 QR Code 行動裝置彈跳出視窗，為此二階段驗證設定方便記憶的名稱，點擊 &amp;ldquo;Save&amp;rdquo; 行動裝置畫面上出現的數字碼，寫入至 AWS 介面的欄位，第二個欄位需等下一組數字碼出現後填寫，填寫完後點擊 &amp;ldquo;Add MFA&amp;rdquo; 螢幕上方顯示指派成功的提醒，代表成功綁定二階段驗證，下次登入此帳號，除了輸入帳號密碼，還需要透過行動裝置提供的數字碼進行驗證囉～ 結語 駭客攻擊手段日新月異，即使我們實施許多資安措施，也無法保證完全抵擋所有威脅。</description>
+    </item>
+    
+    <item>
+      <title>AWS 設定密碼規則</title>
+      <link>https://blog.goodmanjameslian.com/blog/aws-configure-password-rule/</link>
+      <pubDate>Fri, 24 May 2024 01:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/aws-configure-password-rule/</guid>
+      <description>前言 資安在企業中已是不可會缺的角色，尤其現在網路世界中，駭客如雨後春筍般找尋破口攻擊安全性不全的系統。
+基本的防護措施更是不可少，本篇介紹如何設定 AWS IAM 密碼規則，以及建議的規範，讓駭客不易破解使用者密碼。
+先決條件 登入之 AWS IAM 使用者需擁有管理 IAM 的權限 操作步驟 登入 AWS，至 IAM 服務的 &amp;ldquo;Account settings&amp;rdquo; 項目，在 &amp;ldquo;Password policy&amp;rdquo; 欄位點擊 &amp;ldquo;Edit&amp;rdquo; 設定密碼規則，可依據 ISO 27001 規範進行設定，</description>
+    </item>
+    
     <item>
       <title>建立 GCP Access key</title>
       <link>https://blog.goodmanjameslian.com/blog/gcp-create-service-account-access-key/</link>
