@@ -6,7 +6,18 @@
     <description>Recent content in Proficiency on 冠勝的分享天地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 30 May 2024 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/categories/proficiency/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 31 May 2024 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/categories/proficiency/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GCP 專案建議修改的預設內容</title>
+      <link>https://blog.goodmanjameslian.com/blog/gcp-increase-project-security/</link>
+      <pubDate>Fri, 31 May 2024 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/gcp-increase-project-security/</guid>
+      <description>前言 GCP 有些預設內容是為了方便使用者操作，卻忽略了安全性。
+以下兩個建議，在建立 GCP 專案後，可以做些調整，增加雲端整體環境的安全性。
+一、停用開放 rdp 和 ssh 連線的防火牆規則 有兩個預設的防火牆是開放所有外部 IP 連線（0.</description>
+    </item>
+    
     <item>
       <title>GCP GCE 設定自動備份排程</title>
       <link>https://blog.goodmanjameslian.com/blog/gcp-configure-snapshot-schedule/</link>

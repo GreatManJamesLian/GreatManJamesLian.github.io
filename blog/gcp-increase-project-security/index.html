@@ -5,12 +5,12 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="點擊下去，會有好事發生">
+  <meta name="description" content="安全第一">
   <meta name="author" content="James">
   
   <meta property="og:image" content="/images/Two-hair.png">
-  <meta property="og:url" content="https://blog.goodmanjameslian.com/tags/iis/">
-  <meta property="og:type" content="tags">
+  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/gcp-increase-project-security/">
+  <meta property="og:type" content="post">
 
   
   <meta property="og:title" content="冠勝的分享天地">
@@ -133,123 +133,127 @@
 </header>
 <!-- /navigation -->
 
-
 <section class="section-sm">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 mb-5 mb-lg-0">
-        <div class="row">
-          
-          
-          <div class="col-md-12 mb-4">
-    <article class="card">
-        <div class="row">
-            <div class="col-md-6 order-md-1">
-                
-                <img src="https://blog.goodmanjameslian.com/images/post/iis-webserver.png" class="card-img-top" alt="IIS 匯入 PFX 格式憑證">
-                
-            </div>
-            <div class="col-md-6 order-md-2">
-                <div class="card-body px-0">
-                    
-                    <a href="/categories/proficiency"
-                        class="text-primary">Proficiency</a>
-                    
-                    <a href="https://blog.goodmanjameslian.com/blog/iis-import-pfx/" class="h5 d-block my-3">IIS 匯入 PFX 格式憑證</a>
-                    <div class="mb-3 post-meta">
-                        <span>By James</span>
-                        
-                        <span class="border-bottom border-primary px-2 mx-1"></span>
-                        <span>16 May 2024</span>
-                        
-                    </div>
-                    <p class="card-text">Windows server 順利運行 HTTPS 安全加密網站</p>
-                    <a href="https://blog.goodmanjameslian.com/blog/iis-import-pfx/" class="btn btn-outline-primary">read more</a>
-                </div>
-            </div>
-        </div>
-    </article>
-</div>
-
-          
-        </div>
-      </div>
-      
-      <div class="col-lg-4">
-  <div class="widgets">
-    
-    <div class="widget">
-      
-      <h4 class="widget-title">About Me</h4>
-      
-      <img src="https://blog.goodmanjameslian.com/images/Avatar-deer.jpg" alt=""
-        class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4">
-      
-      <p>大家好，我是 James～ 目前致力於雲端產業（AWS、GCP），以及資安相關內容。性喜閱讀，偶爾分享書中觀點，雲端及資安的部分，若有興趣的話，也可以多多交流哦！</p>
-      <a href="https://blog.goodmanjameslian.com/about/" class="btn btn-outline-primary">Know More</a>
-      
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Category</h4>
-      <ul class="list-unstyled">
-        <li><a
-            href="/categories/proficiency/">Proficiency</a>
-        </li>
-        <li><a
-            href="/categories/reading/">Reading</a>
-        </li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Tag</h4>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/aws/">Aws</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/backup/">Backup</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/certificate/">Certificate</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/cloud/">Cloud</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/gcp/">Gcp</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/iis/">Iis</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/openssl/">Openssl</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/reading/">Reading</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/security/">Security</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/thought/">Thought</a></li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Social</h4>
-      <ul class="list-inline social-links">
+      <div class="col-lg-8 mx-auto">
         
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <img src="https://blog.goodmanjameslian.com/images/promotion.png" alt="" class="img-fluid">
-    </div>
-  </div>
-</div>
+        <a href="/categories/proficiency"
+          class="text-primary">Proficiency</a>
+        
+        <h1>GCP 專案建議修改的預設內容</h1>
+        <div class="mb-3 post-meta">
+          <span>By James</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>31 May 2024</span>
+          
+        </div>
+        <div class="content mb-5">
+          <h2 id="前言">前言</h2>
+<p>GCP 有些預設內容是為了方便使用者操作，卻忽略了安全性。</p>
+<p>以下兩個建議，在建立 GCP 專案後，可以做些調整，增加雲端整體環境的安全性。</p>
+<h2 id="一停用開放-rdp-和-ssh-連線的防火牆規則">一、停用開放 rdp 和 ssh 連線的防火牆規則</h2>
+<p>有兩個預設的防火牆是開放所有外部 IP 連線（0.0.0.0），很容易成為資安破口，建議關閉。</p>
+<h3 id="先決條件">先決條件</h3>
+<ol>
+<li>登入 GCP 之 Google 帳號需擁有管理 VPC 的權限</li>
+</ol>
+<h3 id="操作步驟">操作步驟</h3>
+<ol>
+<li>至 &ldquo;Firewall policies&rdquo; 介面，可看到 &ldquo;default-allow-rdp&rdquo; 及 &ldquo;default-allow-ssh&rdquo; 兩個防火牆規則，先點選一個進行設定</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/GCP-INCREASE-PROJECT-SECURITY/image1.png"
+         alt="Image" width="1000"/>
+</figure>
 
-      
-      
-      <div class="col-12 mt-5">
+<ol start="2">
+<li>點擊上方 &ldquo;EDIT&rdquo;</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/GCP-INCREASE-PROJECT-SECURITY/image2.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="3">
+<li>往下滑到底部，展開 &ldquo;DISABLE RULE&rdquo;</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/GCP-INCREASE-PROJECT-SECURITY/image3.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="4">
+<li>點選 &ldquo;Disabled&rdquo;，再點擊 &ldquo;SAVE&rdquo; 儲存設定</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/GCP-INCREASE-PROJECT-SECURITY/image4.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="5">
+<li>回到防火牆首頁，可看到 default-allow-rdp 規則前面多了一個停用的標誌，代表成功停用了此防火牆規則</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/GCP-INCREASE-PROJECT-SECURITY/image5.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="6">
+<li>依照上述步驟，停用 &ldquo;default-allow-ssh&rdquo; 防火牆規則</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/GCP-INCREASE-PROJECT-SECURITY/image6.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<h2 id="二調整-service-account-權限">二、調整 Service account 權限</h2>
+<p>在啟用服務的時候，GCP 會給予啟用的服務一個預設的 Service account，也就是開放權限給服務，去操作雲端環境。</p>
+<p>如圖所示，如果在 &ldquo;Compute Engine API&rdquo; 介面點擊了 &ldquo;Enable&rdquo;，GCP 就會產出預設的 Compute Engine 權限</p>
+<figure class="image-frame"><img src="/images/post/GCP-INCREASE-PROJECT-SECURITY/image7.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<p>不過預設給定的權限為 Editor，基本上，給服務的權限不需要開到那麼大，也很大的機率是服務根本不會操作到環境的內容，不給操作權限也是可以的，所以必須對權限進行調整。</p>
+<p>或者是，服務（Ex: GCE）不使用預設的 Service account，而是新增一個 Service account，綁定在服務（Ex: GCE）上，並給予操作特定服務（Ex: Cloud Storage）的權限。我個人偏向此操作，後續也會說明如何建立 service account。</p>
+<h3 id="先決條件-1">先決條件</h3>
+<ol>
+<li>登入 GCP 之 Google 帳號需擁有管理 IAM 的權限</li>
+</ol>
+<h3 id="操作步驟-1">操作步驟</h3>
+<ol>
+<li>至 IAM 服務介面，點擊右方編輯的符號，編輯 GCP 建立的預設 Service account</li>
+</ol>
+<p><strong>由於部分內容涉及敏感信息，所以選擇在文章中加以遮蔽。</strong></p>
+<figure class="image-frame"><img src="/images/post/GCP-INCREASE-PROJECT-SECURITY/image8.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="2">
+<li>將 Editor 調整為 Viewer（只可讀，不可寫、刪），若是此服務（Ex: GCE）會與其他 GCP 服務（Ex: Cloud Storage）串接，則可給予此 Service account 操作特定服務（Ex: Cloud Storage）的權限。</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/GCP-INCREASE-PROJECT-SECURITY/image9.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="3">
+<li>回到 IAM 首頁，可看到權限變更了，代表設定成功～</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/GCP-INCREASE-PROJECT-SECURITY/image10.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<h2 id="結語">結語</h2>
+<p>以上是建立 GCP 專案初期，增加雲端整體環境安全性的建議。</p>
+<p>最近對資安方面較多著墨，因為公司的系統被駭客攻擊，很多資料被加密… 所以對安全性的內容比較敏感。</p>
+<p>資安事件除了得花很多時間尋找解決方案，造成許多不便，也嚴重影響了公司營運！</p>
+<p>所以，勢必要謹慎看待整體環境的安全性，不要為了方便而忽略了防護，以免得不償失。</p>
+<p>保有資安意識，才是防範攻擊最重要的一步！</p>
+<p>希望這篇文章能啟發您更進一步的學習和研究，感謝您耐心閱讀。如果您有任何相關問題或想要討論，請隨時寄信給我，我們一起來探討吧！</p>
+
+        </div>
+
+        
         
       </div>
     </div>
   </div>
 </section>
-
 
 
 
