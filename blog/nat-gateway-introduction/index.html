@@ -5,12 +5,12 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="點擊下去，會有好事發生">
+  <meta name="description" content="提升網路安全好幫手">
   <meta name="author" content="James">
   
   <meta property="og:image" content="/images/Two-hair.png">
-  <meta property="og:url" content="https://blog.goodmanjameslian.com/tags/backup/">
-  <meta property="og:type" content="tags">
+  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/nat-gateway-introduction/">
+  <meta property="og:type" content="post">
 
   
   <meta property="og:title" content="冠勝的分享天地">
@@ -133,125 +133,50 @@
 </header>
 <!-- /navigation -->
 
-
 <section class="section-sm">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 mb-5 mb-lg-0">
-        <div class="row">
-          
-          
-          <div class="col-md-12 mb-4">
-    <article class="card">
-        <div class="row">
-            <div class="col-md-6 order-md-1">
-                
-                <img src="https://blog.goodmanjameslian.com/images/post/gcp-logo.png" class="card-img-top" alt="GCP GCE 設定自動備份排程">
-                
-            </div>
-            <div class="col-md-6 order-md-2">
-                <div class="card-body px-0">
-                    
-                    <a href="/categories/proficiency"
-                        class="text-primary">Proficiency</a>
-                    
-                    <a href="https://blog.goodmanjameslian.com/blog/gcp-configure-snapshot-schedule/" class="h5 d-block my-3">GCP GCE 設定自動備份排程</a>
-                    <div class="mb-3 post-meta">
-                        <span>By James</span>
-                        
-                        <span class="border-bottom border-primary px-2 mx-1"></span>
-                        <span>30 May 2024</span>
-                        
-                    </div>
-                    <p class="card-text">確保系統持續營運</p>
-                    <a href="https://blog.goodmanjameslian.com/blog/gcp-configure-snapshot-schedule/" class="btn btn-outline-primary">read more</a>
-                </div>
-            </div>
-        </div>
-    </article>
-</div>
-
-          
-        </div>
-      </div>
-      
-      <div class="col-lg-4">
-  <div class="widgets">
-    
-    <div class="widget">
-      
-      <h4 class="widget-title">About Me</h4>
-      
-      <img src="https://blog.goodmanjameslian.com/images/Avatar-deer.jpg" alt=""
-        class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4">
-      
-      <p>大家好，我是 James～ 目前致力於雲端產業（AWS、GCP），以及資安相關內容。性喜閱讀，偶爾分享書中觀點，雲端及資安的部分，若有興趣的話，也可以多多交流哦！</p>
-      <a href="https://blog.goodmanjameslian.com/about/" class="btn btn-outline-primary">Know More</a>
-      
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Category</h4>
-      <ul class="list-unstyled">
-        <li><a
-            href="/categories/proficiency/">Proficiency</a>
-        </li>
-        <li><a
-            href="/categories/reading/">Reading</a>
-        </li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Tag</h4>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/aws/">Aws</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/backup/">Backup</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/certificate/">Certificate</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/cloud/">Cloud</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/gcp/">Gcp</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/iis/">Iis</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/network/">Network</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/openssl/">Openssl</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/reading/">Reading</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/security/">Security</a></li>
-        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
-            href="/tags/thought/">Thought</a></li>
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <h4 class="widget-title">Social</h4>
-      <ul class="list-inline social-links">
+      <div class="col-lg-8 mx-auto">
         
-      </ul>
-    </div>
-    
-    <div class="widget">
-      <img src="https://blog.goodmanjameslian.com/images/promotion.png" alt="" class="img-fluid">
-    </div>
-  </div>
-</div>
+        <a href="/categories/proficiency"
+          class="text-primary">Proficiency</a>
+        
+        <h1>NAT Gateway 的功能與應用</h1>
+        <div class="mb-3 post-meta">
+          <span>By James</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>16 June 2024</span>
+          
+        </div>
+        <div class="content mb-5">
+          <h2 id="主要功能">主要功能</h2>
+<p>NAT Gateway 得以讓存在於私人網段 (Private subnet) 的伺服器，可以連線到網際網路，通常用於伺服器作業系統版本更新和補丁，或是其他相關需要連線到網際網路的需求。</p>
+<p>NAT Gateway 放在公開網段 (Public subnet)，是一個讓私人網段的伺服器路由 (Route) 到網際網路閘道 (Internet gateway)，並連線至網際網路的媒介。</p>
+<h2 id="架構圖">架構圖</h2>
+<p>以 AWS 網路環境 VPC 為例</p>
+<figure><img src="/images/post/NAT-GATEWAY-INTRODUCTION/image1.png"
+         alt="Image" width="1000"/>
+</figure>
 
-      
-      
-      <div class="col-12 mt-5">
+<h2 id="相關專有名詞說明">相關專有名詞說明</h2>
+<p>VPC：全名為 Virtual Private Cloud，是雲端服務 (AWS、GCP、Azure…) 提供的一個虛擬網路環境服務，可依使用者需求切分子網段 (Subnet)</p>
+<p>Availablility zone：可用區域，雲端服務針對各地區（Region）規畫出物理上獨立的資料中心（Data center）群組</p>
+<p>Public subnet：網段之路由有連接網際網路閘道(Internet gateway)，所以可以連線網際網路</p>
+<p>Private subnet：網段之路由沒有連接網際網路閘道，所以不能連線網際網路</p>
+<h2 id="結語">結語</h2>
+<p>NAT Gateway 可增加內部系統的安全性，減低外在資安風險。雖然此功能已是較久以前增加內部機器安全性的方法，現行雲端服務已經有替代此功能的服務（像是 VPC Peering），除了更加安全，而且費用比 NAT Gateway 便宜，不過此服務只在 AWS 才有。</p>
+<p>NAT Gateway 在網路世界中應用更加廣泛，可以在很多網路世界應用，不論是地端或是雲端。所以需要了解 NAT Gateway 原理及設定，後續會說明如何在網路環境設定 NAT Gateway。</p>
+<p>希望這篇文章能啟發您更進一步的學習和研究，感謝您耐心閱讀。如果您有任何相關問題或想要討論，請隨時寄信給我，我們一起來探討吧！</p>
+
+        </div>
+
+        
         
       </div>
     </div>
   </div>
 </section>
-
 
 
 

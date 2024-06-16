@@ -6,7 +6,17 @@
     <description>Recent content on 冠勝的分享天地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 31 May 2024 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Jun 2024 17:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NAT Gateway 的功能與應用</title>
+      <link>https://blog.goodmanjameslian.com/blog/nat-gateway-introduction/</link>
+      <pubDate>Sun, 16 Jun 2024 17:30:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/nat-gateway-introduction/</guid>
+      <description>主要功能 NAT Gateway 得以讓存在於私人網段 (Private subnet) 的伺服器，可以連線到網際網路，通常用於伺服器作業系統版本更新和補丁，或是其他相關需要連線到網際網路的需求。
+NAT Gateway 放在公開網段 (Public subnet)，是一個讓私人網段的伺服器路由 (Route) 到網際網路閘道 (Internet gateway)，並連線至網際網路的媒介。</description>
+    </item>
+    
     <item>
       <title>GCP 專案建議修改的預設內容</title>
       <link>https://blog.goodmanjameslian.com/blog/gcp-increase-project-security/</link>
