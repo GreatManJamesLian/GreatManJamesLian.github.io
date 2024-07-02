@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on 冠勝的分享天地</title>
+    <link>https://blog.goodmanjameslian.com/tags/windows/</link>
+    <description>Recent content in Windows on 冠勝的分享天地</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 02 Jul 2024 22:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>建立 Windows AD Server</title>
+      <link>https://blog.goodmanjameslian.com/blog/windows-configure-ad-server/</link>
+      <pubDate>Tue, 02 Jul 2024 22:30:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/windows-configure-ad-server/</guid>
+      <description>前言 當今企業面臨著越來越多的挑戰，無論是管理大量的用戶和資源，還是確保網絡安全和數據保護。為了有效地應對這些挑戰，企業需要一個強大且靈活的目錄服務來支持其 IT 基礎設施。這正是 AD Server 所擅長的領域。
+本文將介紹如何建立 AD Server。</description>
+    </item>
+    
+  </channel>
+</rss>
