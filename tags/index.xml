@@ -6,13 +6,40 @@
     <description>Recent content in Tags on 冠勝的分享天地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 06 Jul 2024 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Jul 2024 22:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS</title>
+      <link>https://blog.goodmanjameslian.com/tags/aws/</link>
+      <pubDate>Wed, 10 Jul 2024 22:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/tags/aws/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Cloud</title>
       <link>https://blog.goodmanjameslian.com/tags/cloud/</link>
-      <pubDate>Sat, 06 Jul 2024 00:00:00 +0800</pubDate>
+      <pubDate>Wed, 10 Jul 2024 22:00:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://blog.goodmanjameslian.com/tags/network/</link>
+      <pubDate>Wed, 10 Jul 2024 22:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://blog.goodmanjameslian.com/tags/security/</link>
+      <pubDate>Wed, 10 Jul 2024 22:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/tags/security/</guid>
       <description></description>
     </item>
     
@@ -40,33 +67,6 @@
       <pubDate>Tue, 02 Jul 2024 22:30:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/tags/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AWS</title>
-      <link>https://blog.goodmanjameslian.com/tags/aws/</link>
-      <pubDate>Thu, 20 Jun 2024 00:30:00 +0800</pubDate>
-      
-      <guid>https://blog.goodmanjameslian.com/tags/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Security</title>
-      <link>https://blog.goodmanjameslian.com/tags/security/</link>
-      <pubDate>Thu, 20 Jun 2024 00:30:00 +0800</pubDate>
-      
-      <guid>https://blog.goodmanjameslian.com/tags/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Network</title>
-      <link>https://blog.goodmanjameslian.com/tags/network/</link>
-      <pubDate>Sun, 16 Jun 2024 17:30:00 +0800</pubDate>
-      
-      <guid>https://blog.goodmanjameslian.com/tags/network/</guid>
       <description></description>
     </item>
     

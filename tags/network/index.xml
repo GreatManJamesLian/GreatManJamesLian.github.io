@@ -6,7 +6,17 @@
     <description>Recent content in Network on 冠勝的分享天地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 16 Jun 2024 17:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Jul 2024 22:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS 建立 NAT Gateway</title>
+      <link>https://blog.goodmanjameslian.com/blog/aws-configure-nat-gateway/</link>
+      <pubDate>Wed, 10 Jul 2024 22:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/aws-configure-nat-gateway/</guid>
+      <description>前言 NAT Gateway 得以讓存在於私人網段 (Private subnet) 的伺服器，可以連線到網際網路。
+NAT Gateway 的說明，可以參考此篇文章。</description>
+    </item>
+    
     <item>
       <title>NAT Gateway 的功能與應用</title>
       <link>https://blog.goodmanjameslian.com/blog/nat-gateway-introduction/</link>

@@ -8,6 +8,16 @@
     <language>zh-tw</language>
     <lastBuildDate>Tue, 29 Oct 2019 13:49:23 +0600</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>AWS 建立 NAT Gateway</title>
+      <link>https://blog.goodmanjameslian.com/blog/aws-configure-nat-gateway/</link>
+      <pubDate>Wed, 10 Jul 2024 22:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/aws-configure-nat-gateway/</guid>
+      <description>前言 NAT Gateway 得以讓存在於私人網段 (Private subnet) 的伺服器，可以連線到網際網路。
+NAT Gateway 的說明，可以參考此篇文章。</description>
+    </item>
+    
+    <item>
       <title>GCP Windows server 磁碟機擴充儲存空間</title>
       <link>https://blog.goodmanjameslian.com/blog/gcp-windows-server-add-disk-size/</link>
       <pubDate>Sat, 06 Jul 2024 00:00:00 +0800</pubDate>

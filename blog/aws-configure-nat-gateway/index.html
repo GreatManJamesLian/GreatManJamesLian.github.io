@@ -5,11 +5,11 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="增加 AWS 帳號安全性">
+  <meta name="description" content="提升網路安全好幫手">
   <meta name="author" content="James">
   
   <meta property="og:image" content="/images/Two-hair.png">
-  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/aws-configure-password-rule/">
+  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/aws-configure-nat-gateway/">
   <meta property="og:type" content="post">
 
   
@@ -141,61 +141,95 @@
         <a href="/categories/proficiency"
           class="text-primary">Proficiency</a>
         
-        <h1>AWS 設定密碼規則</h1>
+        <h1>AWS 建立 NAT Gateway</h1>
         <div class="mb-3 post-meta">
           <span>By James</span>
           
           <span class="border-bottom border-primary px-2 mx-1"></span>
-          <span>24 May 2024</span>
+          <span>10 July 2024</span>
           
         </div>
         <div class="content mb-5">
           <h2 id="前言">前言</h2>
-<p>資安在企業中已是不可會缺的角色，尤其現在網路世界中，駭客如雨後春筍般找尋破口攻擊安全性不全的系統。</p>
-<p>基本的防護措施更是不可少，本篇介紹如何設定 AWS IAM 密碼規則，以及建議的規範，讓駭客不易破解使用者密碼。</p>
-<h2 id="先決條件">先決條件</h2>
-<ol>
-<li>登入之 AWS IAM 使用者需擁有管理 IAM 的權限</li>
-</ol>
+<p>NAT Gateway 得以讓存在於私人網段 (Private subnet) 的伺服器，可以連線到網際網路。</p>
+<p>NAT Gateway 的說明，可以參考<a href="https://blog.goodmanjameslian.com/blog/nat-gateway-introduction">此篇文章</a>。</p>
+<p>此篇說明在 AWS 建立並設定 NAT Gateway。</p>
 <h2 id="操作步驟">操作步驟</h2>
 <ol>
-<li>登入 AWS，至 IAM 服務的 &ldquo;Account settings&rdquo; 項目，在 &ldquo;Password policy&rdquo; 欄位點擊 &ldquo;Edit&rdquo;</li>
+<li>至 <strong>VPC -&gt; Elastic IPs</strong> 介面，點擊右上方 <strong>Allocate Elastic IP Address</strong>，配置一個固定 IP，後續將與 NAT Gateway 綁定</li>
 </ol>
-<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-PASSWORD-RULE/image1.png"
-         alt="Image" width="1000"/>
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-NAT-GATEWAY/image2.png"
+         alt="Image" width="1500"/>
 </figure>
 
 <ol start="2">
-<li>
-<p>設定密碼規則，可依據 ISO 27001 規範進行設定，</p>
-<ul>
-<li>長度至少 8 碼</li>
-<li>至少有一個大寫英文字母</li>
-<li>至少有一個小寫英文字母</li>
-<li>至少有一個數字</li>
-<li>至少有一個特殊字元（!@#$%^&amp;*()_+-=[]{}|&rsquo;）</li>
-<li>90 天後過期，需更換密碼</li>
-<li>不可與前三次重複</li>
-</ul>
-<p>設定完成後點擊右下方 &ldquo;Save changes&rdquo;</p>
-</li>
+<li><em>Network border group</em> 欄位，選擇當前所屬的 AWS Region（Ex：us-east-1），再點擊下方 <strong>Allocate</strong></li>
 </ol>
-<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-PASSWORD-RULE/image2.png"
-         alt="Image" width="1000"/>
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-NAT-GATEWAY/image3.png"
+         alt="Image" width="800"/>
 </figure>
 
 <ol start="3">
-<li>可看到密碼規則設定成功～</li>
+<li>至 <strong>VPC -&gt; NAT gateways</strong> 介面，點擊右上方 <strong>Create NAT gateway</strong></li>
 </ol>
-<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-PASSWORD-RULE/image3.png"
-         alt="Image" width="1000"/>
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-NAT-GATEWAY/image4.png"
+         alt="Image" width="1500"/>
 </figure>
 
 <ol start="4">
-<li>後續使用者登入時，會要求更新密碼，且符合所設定的密碼規則</li>
+<li>依序進行設定</li>
 </ol>
+<ul>
+<li>Name：輸入 NAT gateway 名稱</li>
+<li>Subnet：需選擇 <strong>Pubnet subnet</strong>，也就是路由器有綁定網際網路閘道（Internet gateway）的子網域</li>
+<li>Connectivity type：選擇 Public</li>
+<li>Elastic IP allocation ID：下拉選單，選擇剛建立之 Elastic IP</li>
+</ul>
+<p>設定完成後，點擊右下方 <strong>Create NAT Gateway</strong></p>
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-NAT-GATEWAY/image5.png"
+         alt="Image" width="800"/>
+</figure>
+
+<ol start="5">
+<li>至 <strong>VPC -&gt; Route tables</strong> 介面，點擊剛建立  NAT Gateway 所在的子網域</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-NAT-GATEWAY/image6.png"
+         alt="Image" width="1500"/>
+</figure>
+
+<ol start="6">
+<li>點擊右方 <strong>Edit routes</strong></li>
+</ol>
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-NAT-GATEWAY/image7.png"
+         alt="Image" width="1500"/>
+</figure>
+
+<ol start="7">
+<li>點擊 <strong>Add route</strong>，並依據進行設定</li>
+</ol>
+<ul>
+<li>Destination：輸入 <strong>0.0.0.0/0</strong>，開放內網機器可以連線到網際網路任何地方</li>
+<li>Target：下拉選單，選擇 <strong>NAT Gateway</strong>，再選擇剛建立之 NAT Gateway</li>
+</ul>
+<p>完成後點擊 <strong>Save changes</strong></p>
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-NAT-GATEWAY/image9.png"
+         alt="Image" width="1500"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-NAT-GATEWAY/image10.png"
+         alt="Image" width="1500"/>
+</figure>
+
+<ol start="8">
+<li>登入存在於內網的機器，測試看看是否能連線至網際網路，若有收到回應，代表 NAT gateway 有正確執行，也代表設定成功啦！</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/AWS-CONFIGURE-NAT-GATEWAY/image11.png"
+         alt="Image" width="800"/>
+</figure>
+
 <h2 id="結語">結語</h2>
-<p>嚴格的密碼規則是增加系統資安的第一步，但以現在網路發達的年代，其實並不夠嚴謹，設定二階段驗證較能落實資安防範，有關 AWS IAM 綁定 MFA 設定，可參考<a href="https://blog.goodmanjameslian.com/blog/aws-configure-mfa/">此篇文章</a>。</p>
+<p>以上說明如何在 AWS 設定 NAT Gateway。</p>
+<p>接下來可以到 AWS 環境建立看看，體驗 NAT Gateway 的有趣之處！</p>
 <p>希望這篇文章能啟發您更進一步的學習和研究，感謝您耐心閱讀。如果您有任何相關問題或想要討論，請隨時寄信給我，我們一起來探討吧！</p>
 
         </div>
