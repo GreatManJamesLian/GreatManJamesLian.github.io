@@ -6,7 +6,19 @@
     <description>Recent content in Cloud on 冠勝的分享天地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 10 Jul 2024 22:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Jul 2024 11:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS Linux server 磁碟機擴充儲存空間</title>
+      <link>https://blog.goodmanjameslian.com/blog/aws-linux-server-add-disk-size/</link>
+      <pubDate>Sun, 14 Jul 2024 11:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/aws-linux-server-add-disk-size/</guid>
+      <description>前言 系統使用久了，存放的檔案尺寸也隨著時間水漲船高，經常有儲存空間不足的問題。
+此篇介紹如何擴增 AWS Linux 的儲存空間。
+設定時並不會造成機器停機，請放心操作。
+GCP Windows 擴增儲存空間的操作，可以參考此篇文章。</description>
+    </item>
+    
     <item>
       <title>AWS 建立 NAT Gateway</title>
       <link>https://blog.goodmanjameslian.com/blog/aws-configure-nat-gateway/</link>
@@ -24,7 +36,8 @@ NAT Gateway 的說明，可以參考此篇文章。</description>
       
       <guid>https://blog.goodmanjameslian.com/blog/gcp-windows-server-add-disk-size/</guid>
       <description>擴充磁碟機儲存空間，不會造成機器停機問題。
-操作步驟 至 Compute Engine ，Disk 頁面，選擇需要擴充空間的磁碟機 點擊右上方 &amp;ldquo;EDIT&amp;rdquo; Properties -&amp;gt; Size 欄位，輸入磁碟機的總空間大小，Ex：50 更改為 100，擴充了 50 GB 的儲存空間，完成後點擊 Save 已成功擴增儲存空間，不過還需要到 Windows 內做設定，告知 Server 我們要怎麼使用新增的儲存空間</description>
+AWS Linux 擴增儲存空間的操作，可以參考此篇文章。
+操作步驟 至 Compute Engine ，Disk 頁面，選擇需要擴充儲存空間的磁碟機 點擊右上方 &amp;ldquo;EDIT&amp;rdquo; Properties -&amp;gt; Size 欄位，輸入磁碟機的總空間大小，Ex：50 更改為 100，擴充了 50 GB 的儲存空間，完成後點擊 Save 已成功擴增儲存空間，不過還需要到 Windows 內做設定，告知 Server 我們要怎麼使用新增的儲存空間</description>
     </item>
     
     <item>
