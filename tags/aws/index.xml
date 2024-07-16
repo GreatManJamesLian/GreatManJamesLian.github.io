@@ -14,9 +14,9 @@
       
       <guid>https://blog.goodmanjameslian.com/blog/aws-linux-server-add-disk-size/</guid>
       <description>前言 系統使用久了，存放的檔案尺寸也隨著時間水漲船高，經常有儲存空間不足的問題。
-此篇介紹如何擴增 AWS Linux 的儲存空間。
+此篇介紹如何擴增 AWS Linux server 的儲存空間。
 設定時並不會造成機器停機，請放心操作。
-GCP Windows 擴增儲存空間的操作，可以參考此篇文章。</description>
+GCP Ubuntu server 擴增儲存空間的操作，可以參考 GCP Ubuntu server 磁碟機擴充儲存空間。</description>
     </item>
     
     <item>

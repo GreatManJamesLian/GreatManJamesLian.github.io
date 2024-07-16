@@ -150,28 +150,32 @@
           
         </div>
         <div class="content mb-5">
-          <p>擴充磁碟機儲存空間，不會造成機器停機問題。</p>
-<p>AWS Linux 擴增儲存空間的操作，可以參考<a href="https://blog.goodmanjameslian.com/blog/aws-linux-server-add-disk-size/">此篇文章</a>。</p>
+          <h2 id="前言">前言</h2>
+<p>系統使用久了，存放的檔案尺寸也隨著時間水漲船高，經常有儲存空間不足的問題。</p>
+<p>此篇介紹如何擴增 GCP Windows server 的儲存空間。</p>
+<p>設定時並不會造成機器停機，請放心操作。</p>
+<p>AWS Linux server 擴增儲存空間的操作，可以參考 <a href="https://blog.goodmanjameslian.com/blog/aws-linux-server-add-disk-size/">AWS Linux server 磁碟機擴充儲存空間</a>。</p>
+<p>GCP Ubuntu server 擴增儲存空間的操作，可以參考 <a href="https://blog.goodmanjameslian.com/blog/gcp-ubuntu-server-add-disk-size/">GCP Ubuntu server 磁碟機擴充儲存空間</a>。</p>
 <h2 id="操作步驟">操作步驟</h2>
 <ol>
 <li>至 <em>Compute Engine</em> ，<em>Disk</em> 頁面，選擇需要擴充儲存空間的磁碟機</li>
 </ol>
 <figure class="image-frame"><img src="/images/post/GCP-WINDOWS-SERVER-ADD-DISK-SIZE/image1.png"
-         alt="Image" width="1000"/>
+         alt="Image" width="2000"/>
 </figure>
 
 <ol start="2">
 <li>點擊右上方 &ldquo;EDIT&rdquo;</li>
 </ol>
 <figure class="image-frame"><img src="/images/post/GCP-WINDOWS-SERVER-ADD-DISK-SIZE/image2.png"
-         alt="Image" width="1000"/>
+         alt="Image" width="2000"/>
 </figure>
 
 <ol start="3">
 <li><strong>Properties -&gt; Size</strong> 欄位，輸入磁碟機的總空間大小，Ex：50 更改為 100，擴充了 50 GB 的儲存空間，完成後點擊 <strong>Save</strong></li>
 </ol>
 <figure class="image-frame"><img src="/images/post/GCP-WINDOWS-SERVER-ADD-DISK-SIZE/image3.png"
-         alt="Image" width="1000"/>
+         alt="Image" width="2000"/>
 </figure>
 
 <ol start="4">
@@ -183,53 +187,53 @@
 </li>
 </ol>
 <figure class="image-frame"><img src="/images/post/GCP-WINDOWS-SERVER-ADD-DISK-SIZE/image4.png"
-         alt="Image" width="1000"/>
+         alt="Image" width="2000"/>
 </figure>
 
 <ol start="6">
 <li>Disk Management 頁面，可以看到有 50 GB 的儲存空間沒有被配置，也代表還無法使用這個空間</li>
 </ol>
 <figure class="image-frame"><img src="/images/post/GCP-WINDOWS-SERVER-ADD-DISK-SIZE/image5.png"
-         alt="Image" width="1000"/>
+         alt="Image" width="2000"/>
 </figure>
 
 <ol start="7">
 <li>此篇擴充儲存空間的方式為<strong>擴增 C 槽的儲存空間</strong>，所以是在 C 槽的欄位點擊右鍵，選擇 <strong>Extend Volume</strong>。</li>
 </ol>
 <figure class="image-frame"><img src="/images/post/GCP-WINDOWS-SERVER-ADD-DISK-SIZE/image6.png"
-         alt="Image" width="1000"/>
+         alt="Image" width="2000"/>
 </figure>
 
 <ol start="8">
 <li>來到設定精靈頁面，點擊 <strong>Next</strong></li>
 </ol>
 <figure class="image-frame"><img src="/images/post/GCP-WINDOWS-SERVER-ADD-DISK-SIZE/image7.png"
-         alt="Image" width="1000"/>
+         alt="Image" width="2000"/>
 </figure>
 
 <ol start="9">
 <li>保持預設即可，將剛剛在 GCP 新配置的儲存空間全部配置給 C 槽</li>
 </ol>
 <figure class="image-frame"><img src="/images/post/GCP-WINDOWS-SERVER-ADD-DISK-SIZE/image8.png"
-         alt="Image" width="1000"/>
+         alt="Image" width="2000"/>
 </figure>
 
 <ol start="10">
 <li>點擊 Finish</li>
 </ol>
 <figure class="image-frame"><img src="/images/post/GCP-WINDOWS-SERVER-ADD-DISK-SIZE/image9.png"
-         alt="Image" width="1000"/>
+         alt="Image" width="2000"/>
 </figure>
 
 <ol start="11">
 <li>至檔案總管查看 C 槽的儲存空間，可看到總空間已擴充至 100 GB，也代表已成功擴增了儲存空間！</li>
 </ol>
 <figure class="image-frame"><img src="/images/post/GCP-WINDOWS-SERVER-ADD-DISK-SIZE/image10.png"
-         alt="Image" width="1000"/>
+         alt="Image" width="2000"/>
 </figure>
 
-<p>同一個磁碟機的儲存空間，建議合併為同一個儲存空間，不要切割為 C 槽或和 D 槽&hellip;，因為後續若要擴充某個空間，會不好處理。</p>
-<p>若想分出一個 D 槽，建議在 GCP 建立一個新的磁碟機，並附加在 Instance，以便後續管理。</p>
+<p>以上為擴增 GCP Windows server 機器儲存空間的設定操作，</p>
+<p>接下來可以為已經營運一段時間，且儲存空間即將不足的機器，擴增容量吧！</p>
 <p>希望這篇文章能啟發您更進一步的學習和研究，感謝您耐心閱讀。如果您有任何相關問題或想要討論，請隨時寄信給我，我們一起來探討吧！</p>
 
         </div>
