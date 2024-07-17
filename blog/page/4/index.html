@@ -5,12 +5,12 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="解決磁碟空間不足問題">
+  <meta name="description" content="this is meta description">
   <meta name="author" content="James">
   
   <meta property="og:image" content="/images/thumbnail.png">
-  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/gcp-ubuntu-server-add-disk-size/">
-  <meta property="og:type" content="post">
+  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/">
+  <meta property="og:type" content="blog">
 
   
   <meta property="og:title" content="冠勝的分享天地">
@@ -133,130 +133,157 @@
 </header>
 <!-- /navigation -->
 
+
 <section class="section-sm">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 mx-auto">
-        
-        <a href="/categories/proficiency"
-          class="text-primary">Proficiency</a>
-        
-        <h1>GCP Ubuntu server 磁碟機擴充儲存空間</h1>
-        <div class="mb-3 post-meta">
-          <span>By James</span>
+      <div class="col-lg-8 mb-5 mb-lg-0">
+        <div class="row">
           
-          <span class="border-bottom border-primary px-2 mx-1"></span>
-          <span>16 July 2024</span>
+          
+          <div class="col-md-12 mb-4">
+    <article class="card">
+        <div class="row">
+            <div class="col-md-6 order-md-1">
+                
+                <img src="https://blog.goodmanjameslian.com/images/post/Three-elements-to-cultivate-habits1.jpg" class="card-img-top" alt="與成功有約&ndash;閱讀筆記1">
+                
+            </div>
+            <div class="col-md-6 order-md-2">
+                <div class="card-body px-0">
+                    
+                    <a href="/categories/reading"
+                        class="text-primary">Reading</a>
+                    
+                    <a href="https://blog.goodmanjameslian.com/blog/the-7-habits-of-highly-effective-people-1/" class="h5 d-block my-3">與成功有約&ndash;閱讀筆記1</a>
+                    <div class="mb-3 post-meta">
+                        <span>By James</span>
+                        
+                        <span class="border-bottom border-primary px-2 mx-1"></span>
+                        <span>20 March 2024</span>
+                        
+                    </div>
+                    <p class="card-text">第一部 重新探索自我 由內而外造就自己</p>
+                    <a href="https://blog.goodmanjameslian.com/blog/the-7-habits-of-highly-effective-people-1/" class="btn btn-outline-primary">read more</a>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+
           
         </div>
-        <div class="content mb-5">
-          <h2 id="前言">前言</h2>
-<p>系統使用久了，存放的檔案尺寸也隨著時間水漲船高，經常有儲存空間不足的問題。</p>
-<p>此篇介紹如何擴增 GCP Ubuntu server 的儲存空間。</p>
-<p>設定時並不會造成機器停機，請放心操作。</p>
-<p>AWS Linux server 擴增儲存空間的操作，可以參考 <a href="https://blog.goodmanjameslian.com/blog/aws-linux-server-add-disk-size/">AWS Linux server 磁碟機擴充儲存空間</a>。</p>
-<p>AWS Windows server 擴增儲存空間的操作，可以參考 <a href="https://blog.goodmanjameslian.com/blog/aws-windows-server-add-disk-size/">AWS Windows server 磁碟機擴充儲存空間</a>。</p>
-<p>GCP Windows server 擴增儲存空間的操作，可以參考 <a href="https://blog.goodmanjameslian.com/blog/gcp-windows-server-add-disk-size/">GCP Windows server 磁碟機擴充儲存空間</a>。</p>
-<h2 id="操作步驟">操作步驟</h2>
-<ol>
-<li>至 <em>Compute Engine</em>，<em>VM instances</em> 頁面，選擇需要擴充空間的機器</li>
-</ol>
-<figure class="image-frame"><img src="/images/post/GCP-UBUNTU-SERVER-ADD-DISK-SIZE/image1.png"
-         alt="Image" width="2000"/>
-</figure>
-
-<ol start="2">
-<li>下拉到 <em>Storage</em> 項目，點擊要擴增儲存空間的磁碟機</li>
-</ol>
-<figure class="image-frame"><img src="/images/post/GCP-UBUNTU-SERVER-ADD-DISK-SIZE/image2.png"
-         alt="Image" width="2000"/>
-</figure>
-
-<ol start="3">
-<li>跳轉到 <em>Manage disk</em> 畫面，點擊右上方 <strong>EDIT</strong></li>
-</ol>
-<figure class="image-frame"><img src="/images/post/GCP-UBUNTU-SERVER-ADD-DISK-SIZE/image3.png"
-         alt="Image" width="2000"/>
-</figure>
-
-<ol start="4">
-<li><em>Properties</em> <em>Size</em> 欄位，輸入磁碟機的總空間大小，輸入完成點擊右下方 <strong>Save</strong></li>
-</ol>
-<figure class="image-frame"><img src="/images/post/GCP-UBUNTU-SERVER-ADD-DISK-SIZE/image4.png"
-         alt="Image" width="2000"/>
-</figure>
-
-<ol start="5">
-<li>可看到已經擴增儲存空間</li>
-</ol>
-<figure class="image-frame"><img src="/images/post/GCP-UBUNTU-SERVER-ADD-DISK-SIZE/image5.png"
-         alt="Image" width="2000"/>
-</figure>
-
-<ol start="6">
-<li>登入要擴增儲存空間的機器，輸入 <strong>sudo lsblk</strong>，可以看見磁碟機的 Partition 分區配置。</li>
-</ol>
-<p>以圖為例，磁碟機總空間為 30 GB，只有 9.9 GB 配置給 root，20.1 GB 尚未配置，無法使用</p>
-<figure class="image-frame"><img src="/images/post/GCP-UBUNTU-SERVER-ADD-DISK-SIZE/image6.png"
-         alt="Image" width="2000"/>
-</figure>
-
-<ol start="7">
-<li>
-<p>已成功擴增儲存空間，接下來需要到 Linux 內做設定，告知 Server 我們要如何使用新增的儲存空間</p>
-</li>
-<li>
-<p>輸入 <strong>sudo growpart /dev/sda 1</strong>（sda 會因為設備名稱不同而有所改變），將未配置的儲存空間，配置給第一個 Partition，也就是 root</p>
-</li>
-</ol>
-<figure class="image-frame"><img src="/images/post/GCP-UBUNTU-SERVER-ADD-DISK-SIZE/image7.png"
-         alt="Image" width="2000"/>
-</figure>
-
-<ol start="9">
-<li>再次輸入 <strong>sudo lsblk</strong>，可看到儲存空間已配置給 root</li>
-</ol>
-<figure class="image-frame"><img src="/images/post/GCP-UBUNTU-SERVER-ADD-DISK-SIZE/image8.png"
-         alt="Image" width="2000"/>
-</figure>
-
-<ol start="10">
-<li>配置給 root 後，輸入 <strong>df -hT</strong>，查看 root 的 file system 檔案系統類型</li>
-</ol>
-<p>以圖為例，root 的 file system 類型為 ext4</p>
-<figure class="image-frame"><img src="/images/post/GCP-UBUNTU-SERVER-ADD-DISK-SIZE/image9.png"
-         alt="Image" width="2000"/>
-</figure>
-
-<ol start="11">
-<li>輸入 <strong>sudo resize2fs /dev/xvda1</strong>（路徑會因為 root 路徑不同而改變），擴展 ext4 檔案系統在 root 的分區大小。</li>
-</ol>
-<p>若 file system 檔案系統為 xfs，則輸入 <strong>sudo xfs_growfs -d /</strong></p>
-<p><strong>-d</strong> 的意思為，只增加數據區域的大小，而不改變其他區域（例如日誌區域），以增加擴展效率</p>
-<figure class="image-frame"><img src="/images/post/GCP-UBUNTU-SERVER-ADD-DISK-SIZE/image10.png"
-         alt="Image" width="2000"/>
-</figure>
-
-<ol start="12">
-<li>再次輸入 <strong>df -hT</strong>，可看到 root 的 ext4 file system 已經擴增為 30 GB，也代表已成功擴增了儲存空間！</li>
-</ol>
-<figure class="image-frame"><img src="/images/post/GCP-UBUNTU-SERVER-ADD-DISK-SIZE/image11.png"
-         alt="Image" width="2000"/>
-</figure>
-
-<h2 id="結語">結語</h2>
-<p>以上為擴增 GCP Ubuntu server 機器儲存空間的設定操作，</p>
-<p>接下來可以為已經營運一段時間，且儲存空間即將不足的機器，擴增容量吧！</p>
-<p>希望這篇文章能啟發您更進一步的學習和研究，感謝您耐心閱讀。如果您有任何相關問題或想要討論，請隨時寄信給我，我們一起來探討吧！</p>
-
-        </div>
-
+      </div>
+      
+      <div class="col-lg-4">
+  <div class="widgets">
+    
+    <div class="widget">
+      
+      <h4 class="widget-title">About Me</h4>
+      
+      <img src="https://blog.goodmanjameslian.com/images/Avatar-deer.jpg" alt=""
+        class="img-fluid author-thumb-sm d-block mx-auto rounded-circle mb-4">
+      
+      <p>大家好，我是 James～ 目前致力於雲端產業（AWS、GCP），以及資安相關內容。性喜閱讀，偶爾分享書中觀點，雲端及資安的部分，若有興趣的話，也可以多多交流哦！</p>
+      <a href="https://blog.goodmanjameslian.com/about/" class="btn btn-outline-primary">Know More</a>
+      
+    </div>
+    
+    <div class="widget">
+      <h4 class="widget-title">Category</h4>
+      <ul class="list-unstyled">
+        <li><a
+            href="/categories/proficiency/">Proficiency</a>
+        </li>
+        <li><a
+            href="/categories/reading/">Reading</a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="widget">
+      <h4 class="widget-title">Tag</h4>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/aws/">Aws</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/backup/">Backup</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/certificate/">Certificate</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/cloud/">Cloud</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/ec2/">Ec2</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/gce/">Gce</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/gcp/">Gcp</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/iis/">Iis</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/network/">Network</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/openssl/">Openssl</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/reading/">Reading</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/security/">Security</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/thought/">Thought</a></li>
+        <li class="list-inline-item"><a class="d-block p-2 bg-primary text-white"
+            href="/tags/windows/">Windows</a></li>
+      </ul>
+    </div>
+    
+    <div class="widget">
+      <h4 class="widget-title">Social</h4>
+      <ul class="list-inline social-links">
         
+      </ul>
+    </div>
+    
+    <div class="widget">
+      <img src="https://blog.goodmanjameslian.com/images/promotion.png" alt="" class="img-fluid">
+    </div>
+  </div>
+</div>
+
+      
+      
+      <div class="col-12 mt-5">
         
+    <ul class="pagination pagination-default">
+      <li class="page-item">
+        <a href="/blog/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/blog/page/3/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/blog/" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item">
+        <a href="/blog/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item">
+        <a href="/blog/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 4" class="page-link" role="button">4</a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Last" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul>
       </div>
     </div>
   </div>
 </section>
+
 
 
 

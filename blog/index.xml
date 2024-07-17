@@ -8,9 +8,21 @@
     <language>zh-tw</language>
     <lastBuildDate>Tue, 29 Oct 2019 13:49:23 +0600</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>AWS Windows server 磁碟機擴充儲存空間</title>
+      <link>https://blog.goodmanjameslian.com/blog/aws-windows-server-add-disk-size/</link>
+      <pubDate>Wed, 17 Jul 2024 22:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/aws-windows-server-add-disk-size/</guid>
+      <description>前言 系統使用久了，存放的檔案尺寸也隨著時間水漲船高，經常有儲存空間不足的問題。
+此篇介紹如何擴增 AWS Windows server 的儲存空間。
+設定時並不會造成機器停機，請放心操作。
+AWS Linux server 擴增儲存空間的操作，可以參考 AWS Linux server 磁碟機擴充儲存空間。</description>
+    </item>
+    
+    <item>
       <title>GCP Ubuntu server 磁碟機擴充儲存空間</title>
       <link>https://blog.goodmanjameslian.com/blog/gcp-ubuntu-server-add-disk-size/</link>
-      <pubDate>Mon, 15 Jul 2024 19:00:00 +0800</pubDate>
+      <pubDate>Tue, 16 Jul 2024 17:00:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/blog/gcp-ubuntu-server-add-disk-size/</guid>
       <description>前言 系統使用久了，存放的檔案尺寸也隨著時間水漲船高，經常有儲存空間不足的問題。
@@ -28,7 +40,7 @@ AWS Linux server 擴增儲存空間的操作，可以參考 AWS Linux server 磁
       <description>前言 系統使用久了，存放的檔案尺寸也隨著時間水漲船高，經常有儲存空間不足的問題。
 此篇介紹如何擴增 AWS Linux server 的儲存空間。
 設定時並不會造成機器停機，請放心操作。
-GCP Ubuntu server 擴增儲存空間的操作，可以參考 GCP Ubuntu server 磁碟機擴充儲存空間。</description>
+AWS Windows server 擴增儲存空間的操作，可以參考 AWS Windows server 磁碟機擴充儲存空間。</description>
     </item>
     
     <item>

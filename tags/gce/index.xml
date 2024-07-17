@@ -6,11 +6,11 @@
     <description>Recent content in GCE on 冠勝的分享天地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 15 Jul 2024 19:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/gce/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Jul 2024 17:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/gce/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GCP Ubuntu server 磁碟機擴充儲存空間</title>
       <link>https://blog.goodmanjameslian.com/blog/gcp-ubuntu-server-add-disk-size/</link>
-      <pubDate>Mon, 15 Jul 2024 19:00:00 +0800</pubDate>
+      <pubDate>Tue, 16 Jul 2024 17:00:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/blog/gcp-ubuntu-server-add-disk-size/</guid>
       <description>前言 系統使用久了，存放的檔案尺寸也隨著時間水漲船高，經常有儲存空間不足的問題。

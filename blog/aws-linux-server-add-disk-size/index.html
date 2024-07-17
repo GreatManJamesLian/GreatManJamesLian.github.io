@@ -154,8 +154,9 @@
 <p>系統使用久了，存放的檔案尺寸也隨著時間水漲船高，經常有儲存空間不足的問題。</p>
 <p>此篇介紹如何擴增 AWS Linux server 的儲存空間。</p>
 <p>設定時並不會造成機器停機，請放心操作。</p>
+<p>AWS Windows server 擴增儲存空間的操作，可以參考 <a href="https://blog.goodmanjameslian.com/blog/aws-windows-server-add-disk-size/">AWS Windows server 磁碟機擴充儲存空間</a>。</p>
 <p>GCP Ubuntu server 擴增儲存空間的操作，可以參考 <a href="https://blog.goodmanjameslian.com/blog/gcp-ubuntu-server-add-disk-size/">GCP Ubuntu server 磁碟機擴充儲存空間</a>。</p>
-<p>GCP Windows server 擴增儲存空間的操作，可以參考<a href="https://blog.goodmanjameslian.com/blog/gcp-windows-server-add-disk-size/">GCP Windows server 磁碟機擴充儲存空間</a>。</p>
+<p>GCP Windows server 擴增儲存空間的操作，可以參考 <a href="https://blog.goodmanjameslian.com/blog/gcp-windows-server-add-disk-size/">GCP Windows server 磁碟機擴充儲存空間</a>。</p>
 <h2 id="操作步驟">操作步驟</h2>
 <ol>
 <li>至 <em>EC2</em>，<em>Instances</em> 頁面，選擇需要擴充空間的機器</li>
@@ -189,7 +190,7 @@
 <li><em>Size (GiB)</em> 欄位，輸入磁碟機的總空間大小，輸入完成點擊右下方 <strong>Modify</strong></li>
 </ol>
 <figure class="image-frame"><img src="/images/post/AWS-LINUX-SERVER-ADD-DISK-SIZE/image5.png"
-         alt="Image" width="2000"/>
+         alt="Image" width="1000"/>
 </figure>
 
 <p>再次確認並點擊 <strong>Modify</strong></p>
@@ -245,7 +246,7 @@
 </figure>
 
 <ol start="12">
-<li>輸入 <strong>sudo xfs_growfs -d /</strong>，擴展 xfs 檔案系統在 root 的分區大小。</li>
+<li>輸入 <strong>sudo xfs_growfs -d /</strong>，擴展 xfs 檔案系統在 root 的分區大小</li>
 </ol>
 <p><strong>-d</strong> 的意思為，只增加數據區域的大小，而不改變其他區域（例如日誌區域），以增加擴展效率</p>
 <p>若 file system 檔案系統為 ext4，則輸入 <strong>sudo resize2fs /dev/xvda1</strong>（路徑會因為 root 路徑不同而改變）</p>
