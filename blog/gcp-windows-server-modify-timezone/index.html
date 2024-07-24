@@ -5,11 +5,11 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Windows server 順利運行 HTTPS 安全加密網站">
+  <meta name="description" content="配合當地時區，簡化系統管理">
   <meta name="author" content="James">
   
   <meta property="og:image" content="/images/thumbnail.png">
-  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/iis-import-pfx/">
+  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/gcp-windows-server-modify-timezone/">
   <meta property="og:type" content="post">
 
   
@@ -141,108 +141,52 @@
         <a href="/categories/proficiency"
           class="text-primary">Proficiency</a>
         
-        <h1>IIS 匯入 PFX 格式憑證</h1>
+        <h1>GCP Windows server 調整時區</h1>
         <div class="mb-3 post-meta">
           <span>By James</span>
           
           <span class="border-bottom border-primary px-2 mx-1"></span>
-          <span>16 May 2024</span>
+          <span>24 July 2024</span>
           
         </div>
         <div class="content mb-5">
           <h2 id="前言">前言</h2>
-<p>Windows server 在企業中扮演不可或缺的角色，公司內部系統，大部分都是微軟提供的 AD 進行管理，AD 也是一個龐大且功能強大的工具，之後有機會，也可以分享一些有關 AD 的內容。</p>
-<p>此篇想要介紹，如何讓 Windows server 運行的 IIS 網頁服務，使用 SSL 憑證，提供用戶 HTTPS 網路安全傳輸環境。</p>
-<h2 id="先決條件">先決條件</h2>
-<ol>
-<li>已從憑證供應商購買憑證，並將憑證檔案下載至本地端</li>
-<li>本機已安裝 openssl，若尚未安裝，可參考<a href="https://blog.goodmanjameslian.com/blog/windows-install-openssl/">安裝教學</a></li>
-</ol>
+<p>GCP Windows server 無法從 Control Panel 調整時區，需要從伺服器管理員進入設定。</p>
+<figure class="image-frame"><img src="/images/post/GCP-WINDOWS-SERVER-MODIFY-TIMEZONE/image1.png"
+         alt="Image" width="2000"/>
+</figure>
+
 <h2 id="操作步驟">操作步驟</h2>
 <ol>
-<li>開啟命令提示介面，至憑證檔存放路徑，輸入指令 “openssl pkcs12 -export -in &lt;憑證檔案&gt; -inkey &lt;私鑰檔案&gt; -certfile &lt;中繼憑證檔案&gt; -out &lt;PFX檔案&gt;”，並輸入密碼</li>
+<li>開啟 Server Manager 伺服器管理員，<em>Local Server</em> 介面點擊 <strong>Time zone</strong> 項目</li>
 </ol>
-<p><strong>由於部分內容涉及敏感信息，所以選擇在文章中加以遮蔽</strong></p>
-<figure class="image-frame"><img src="/images/post/IIS-IMPORT-PFX/image1.png"
-         alt="Image" width="1000"/>
+<figure class="image-frame"><img src="/images/post/GCP-WINDOWS-SERVER-MODIFY-TIMEZONE/image2.png"
+         alt="Image" width="2000"/>
 </figure>
 
 <ol start="2">
-<li>開啟 IIS 介面，localhost 項目，點擊 “Server Certificate”，由於部分內容涉及敏感信息，我們選擇在文章中加以遮蔽</li>
+<li>點擊 <strong>Change time zone&hellip;</strong></li>
 </ol>
-<figure class="image-frame"><img src="/images/post/IIS-IMPORT-PFX/image2.png"
-         alt="Image" width="1000"/>
+<figure class="image-frame"><img src="/images/post/GCP-WINDOWS-SERVER-MODIFY-TIMEZONE/image3.png"
+         alt="Image" width="800"/>
 </figure>
 
 <ol start="3">
-<li>點擊右上方 “import”，準備匯入 pfx 檔案</li>
+<li>更改時區，建議更改為當地時區，方便後續管理，更改完後點擊 <strong>OK</strong></li>
 </ol>
-<figure class="image-frame"><img src="/images/post/IIS-IMPORT-PFX/image3.png"
+<figure class="image-frame"><img src="/images/post/GCP-WINDOWS-SERVER-MODIFY-TIMEZONE/image4.png"
          alt="Image" width="1000"/>
 </figure>
 
-<ol start="4">
-<li>選擇 pfx 檔，輸入建立 pfx 檔案時設定的密碼，然後選擇 ”Web Hosting“</li>
-</ol>
-<figure class="image-frame"><img src="/images/post/IIS-IMPORT-PFX/image4.png"
-         alt="Image" width="1000"/>
+<p>可看到成功更改時區了！</p>
+<figure class="image-frame"><img src="/images/post/GCP-WINDOWS-SERVER-MODIFY-TIMEZONE/image5.png"
+         alt="Image" width="800"/>
 </figure>
 
-<ol start="5">
-<li>點開匯入的憑證，確認是否配置成功</li>
-</ol>
-<figure class="image-frame"><img src="/images/post/IIS-IMPORT-PFX/image5.png"
-         alt="Image" width="1000"/>
-</figure>
-
-<ol start="6">
-<li>回到 IIS 首頁，點擊右上方 “Restart”，重啟 IIS 服務</li>
-</ol>
-<figure class="image-frame"><img src="/images/post/IIS-IMPORT-PFX/image6.png"
-         alt="Image" width="1000"/>
-</figure>
-
-<ol start="7">
-<li>接下來設定站台使用 HTTPS 接聽連線，點選建立的站台，點擊右上方 “Bindings…”</li>
-</ol>
-<figure class="image-frame"><img src="/images/post/IIS-IMPORT-PFX/image7.png"
-         alt="Image" width="1000"/>
-</figure>
-
-<ol start="8">
-<li>點擊 “Add…”</li>
-</ol>
-<figure class="image-frame"><img src="/images/post/IIS-IMPORT-PFX/image8.png"
-         alt="Image" width="1000"/>
-</figure>
-
-<ol start="9">
-<li>選擇 “https”，輸入 Hostname，選擇憑證</li>
-</ol>
-<figure class="image-frame"><img src="/images/post/IIS-IMPORT-PFX/image9.png"
-         alt="Image" width="1000"/>
-</figure>
-
-<ol start="10">
-<li>可看到 https 綁定成功</li>
-</ol>
-<figure class="image-frame"><img src="/images/post/IIS-IMPORT-PFX/image10.png"
-         alt="Image" width="1000"/>
-</figure>
-
-<ol start="11">
-<li>重新啟動 IIS</li>
-</ol>
-<figure class="image-frame"><img src="/images/post/IIS-IMPORT-PFX/image11.png"
-         alt="Image" width="1000"/>
-</figure>
-
-<ol start="12">
-<li>至搜尋引擎輸入網址，若顯示為 HTTPS 網頁，代表憑證掛入成功～</li>
-</ol>
 <h2 id="結語">結語</h2>
-<p>資安在企業中已為不可忽視之項目，掛上憑證以及 HTTPS 網頁已是常態，沒人能夠接受連上是 HTTP 網站了吧！雖然很多網站是以 Apache、Nginx 或是其他網頁伺服器運行，我也認為，它們提供的功能也更多元，IIS 並不是最佳選擇。不過只要存在 Windows server，還是會需要了解 IIS 的設定以及操作。</p>
-<p>此外，網路上有許多工具，提供憑證轉換為 PFX 格式，看似方便，卻存在風險，因為憑證擁有者需一併提供私鑰至網站，可能會導致私鑰暴露在外，造成資安危機。因此儘量不要使用。</p>
+<p>以上為擴增 GCP Windows server 調整時區的設定操作，</p>
+<p>有時候遇到困難，並不是思考邏輯有錯誤，而是供應商提供不是那麼人性化的設定，以致使用者苦惱許久。</p>
+<p>不過，關關難過，關關過，既然遇到了，還是要花點心思解決遇到的狀況～</p>
 <p>希望這篇文章能啟發您更進一步的學習和研究，感謝您耐心閱讀。如果您有任何相關問題或想要討論，請隨時寄信給我，我們一起來探討吧！</p>
 
         </div>
