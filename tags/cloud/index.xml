@@ -13,8 +13,7 @@
       <pubDate>Wed, 24 Jul 2024 10:00:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/blog/gcp-windows-server-modify-timezone/</guid>
-      <description>前言 GCP Windows server 無法從 Control Panel 調整時區，需要從伺服器管理員進入設定。
-操作步驟 開啟 Server Manager 伺服器管理員，Local Server 介面點擊 Time zone 項目 點擊 Change time zone&amp;hellip; 更改時區，建議更改為當地時區，方便後續管理，更改完後點擊 OK 可看到成功更改時區了！</description>
+      <description>前言 GCP Windows server 無法從 Control Panel 調整時區，會顯示 Unable to contiune 視窗，說明使用者權限不足。</description>
     </item>
     
     <item>

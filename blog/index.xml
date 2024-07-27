@@ -8,13 +8,25 @@
     <language>zh-tw</language>
     <lastBuildDate>Tue, 29 Oct 2019 13:49:23 +0600</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>混合雲 - VPN 串連雲地環境</title>
+      <link>https://blog.goodmanjameslian.com/blog/hybrid-cloud-vpn-connection/</link>
+      <pubDate>Sat, 27 Jul 2024 15:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/hybrid-cloud-vpn-connection/</guid>
+      <description>前言 當今許多企業選擇採用混合雲作為他們的網路環境。
+雖然全雲端是未來的趨勢，且雲端環境在安全性和穩定性方面相較於地端機房有明顯優勢。
+然而，多數企業仍然希望內部資料能保存在自己的地端機房中。
+採用混合雲架構也有許多好處：
+靈活性和擴展性：混合雲允許企業根據需求彈性擴展或縮減資源，避免過度或不足的資源配置。 成本效益：企業可以選擇性地將部分工作負載轉移到雲端，避免大量硬體投入，降低資本支出。 提升災難恢復和業務連續性：混合雲有助於在地端發生災難時迅速恢復業務運作，並提升資料的安全性和可用性。 更高的數據安全性和合規性：敏感資料可保留在地端，滿足合規要求，同時利用雲端的安全特性保護其他數據。 改進的性能和響應速度：延遲敏感的應用和數據保留在地端，確保更快速的訪問和響應速度。 支援現有基礎設施：無需完全拋棄現有的IT基礎設施，降低轉移到雲端的成本和風險。 這篇文章將介紹如何使用 VPN 串接雲端及地端環境，以實現兩者之間的無縫連接。</description>
+    </item>
+    
+    <item>
       <title>GCP Windows server 調整時區</title>
       <link>https://blog.goodmanjameslian.com/blog/gcp-windows-server-modify-timezone/</link>
       <pubDate>Wed, 24 Jul 2024 10:00:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/blog/gcp-windows-server-modify-timezone/</guid>
-      <description>前言 GCP Windows server 無法從 Control Panel 調整時區，需要從伺服器管理員進入設定。
-操作步驟 開啟 Server Manager 伺服器管理員，Local Server 介面點擊 Time zone 項目 點擊 Change time zone&amp;hellip; 更改時區，建議更改為當地時區，方便後續管理，更改完後點擊 OK 可看到成功更改時區了！</description>
+      <description>前言 GCP Windows server 無法從 Control Panel 調整時區，會顯示 Unable to contiune 視窗，說明使用者權限不足。</description>
     </item>
     
     <item>

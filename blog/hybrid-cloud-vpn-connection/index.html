@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>姆斯先生的替身</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="開啟雲地整合的通道">
+  <meta name="author" content="James">
+  
+  <meta property="og:image" content="/images/thumbnail.png">
+  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/hybrid-cloud-vpn-connection/">
+  <meta property="og:type" content="post">
+
+  
+  <meta property="og:title" content="姆斯先生的替身">
+  <meta property="og:description" content="點擊下去，會有好事發生">
+  <meta property="og:image" content="/images/Two-hair.png">
+  <meta property="og:url" content="">
+
+    
+  
+  <meta name="theme-name" content="liva-hugo" />
+  
+  <meta name="generator" content="Hugo 0.119.0">
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://blog.goodmanjameslian.com/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://blog.goodmanjameslian.com/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://blog.goodmanjameslian.com/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://blog.goodmanjameslian.com/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://blog.goodmanjameslian.com/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://blog.goodmanjameslian.com/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://blog.goodmanjameslian.com/images/favicon.png " type="image/x-icon">
+
+  <!-- google analitycs -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'Your ID', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head>
+<body>
+<!-- preloader start -->
+<div class="preloader">
+  
+  <img src="https://blog.goodmanjameslian.com/images/Two-hair.png " alt="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="https://blog.goodmanjameslian.com/"><img class="img-fluid"
+          src="https://blog.goodmanjameslian.com/images/logo-tea2-resized.jpeg" alt="姆斯先生的替身"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+      
+      
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <div class="desktop-view">
+          <ul class="navbar-nav mr-auto">
+            
+          </ul>
+        </div>
+
+        
+        <a class="navbar-brand mx-auto desktop-view" href="https://blog.goodmanjameslian.com/"><img class="img-fluid" src="https://blog.goodmanjameslian.com/images/logo-tea2-resized.jpeg" alt="姆斯先生的替身"></a>
+
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://blog.goodmanjameslian.com/">Home</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://blog.goodmanjameslian.com/about/">About</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://blog.goodmanjameslian.com/blog/">Post</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://blog.goodmanjameslian.com//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 mx-auto">
+        
+        <a href="/categories/proficiency"
+          class="text-primary">Proficiency</a>
+        
+        <h1>混合雲 - VPN 串連雲地環境</h1>
+        <div class="mb-3 post-meta">
+          <span>By James</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>27 July 2024</span>
+          
+        </div>
+        <div class="content mb-5">
+          <h2 id="前言">前言</h2>
+<p>當今許多企業選擇採用混合雲作為他們的網路環境。</p>
+<p>雖然全雲端是未來的趨勢，且雲端環境在安全性和穩定性方面相較於地端機房有明顯優勢。</p>
+<p>然而，多數企業仍然希望內部資料能保存在自己的地端機房中。</p>
+<p>採用混合雲架構也有許多好處：</p>
+<ul>
+<li><strong>靈活性和擴展性</strong>：混合雲允許企業根據需求彈性擴展或縮減資源，避免過度或不足的資源配置。</li>
+<li><strong>成本效益</strong>：企業可以選擇性地將部分工作負載轉移到雲端，避免大量硬體投入，降低資本支出。</li>
+<li><strong>提升災難恢復和業務連續性</strong>：混合雲有助於在地端發生災難時迅速恢復業務運作，並提升資料的安全性和可用性。</li>
+<li><strong>更高的數據安全性和合規性</strong>：敏感資料可保留在地端，滿足合規要求，同時利用雲端的安全特性保護其他數據。</li>
+<li><strong>改進的性能和響應速度</strong>：延遲敏感的應用和數據保留在地端，確保更快速的訪問和響應速度。</li>
+<li><strong>支援現有基礎設施</strong>：無需完全拋棄現有的IT基礎設施，降低轉移到雲端的成本和風險。</li>
+</ul>
+<p>這篇文章將介紹如何使用 VPN 串接雲端及地端環境，以實現兩者之間的無縫連接。</p>
+<p>本篇是以企業常用的雲端 GCP Cloud VPN 及地端 Fortigate 防火牆實現雲地連接。</p>
+<h2 id="操作步驟">操作步驟</h2>
+<h4 id="雲端建立一個固定-ip">雲端建立一個固定 IP</h4>
+<p>用於串接地端網路通道（VPN Tunnel）的對外連線。</p>
+<ol>
+<li>至 <em>VPC Network</em>，<em>IP addresses</em> 頁面，點擊 RESERVE EXTERNAL STATIC IP ADDRESS</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image1.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="2">
+<li>輸入固定 IP 資訊，可依照截圖操作，完成後點擊下方 <strong>RESERVE</strong></li>
+</ol>
+<p><strong>由於部分內容涉及敏感信息，所以選擇在文章中加以遮蔽</strong></p>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image2.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="3">
+<li>成功保留了一個固定 IP！</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image3.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<h4 id="地端建立-vpn-tunnel">地端建立 VPN Tunnel</h4>
+<ol start="4">
+<li>登入地端 Fortigate 防火牆介面，<em>VPN</em> 項目，<em>IPsec Wizard</em> 頁面，進行 VPN 設定</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image5.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="5">
+<li>依照各區塊進行設定，可參考截圖內容及說明進行設定，未說明部分，保留預設即可，完成後點擊下方 <strong>OK</strong></li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image6.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="6">
+<li>可看到 VPN 建立完成，因尚未和雲端環境連接，所以會是未啟用狀態</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image7.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="7">
+<li>至 <em>Network</em>，<em>Static Routes</em> 頁面，點擊上方 <strong>Create New</strong>，設定 VPN Tunnel 的靜態路由</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image8.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="8">
+<li><em>Destination</em> 欄位，輸入要和地端環境連接的雲端環境子網段（Subnet），<em>Interface</em> 欄位，選擇剛剛建立的 VPN Tunnel，完成後點擊 <strong>OK</strong></li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image9.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="9">
+<li>
+<p>建立成功！</p>
+</li>
+<li>
+<p>接下來到 <em>Policy &amp; Objects</em>，<em>Addresses</em> 頁面，點擊上方 <strong>Create New</strong> -&gt; <strong>Address</strong>，建立雲端、地端共兩個網路環境的網段資訊，為後續設定防火牆政策的時候，提供標的</p>
+</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image10.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="11">
+<li>先建立雲端環境的網段資訊，<em>IP/Netmask</em> 欄位，輸入雲端環境的網段，<em>Interface</em> 欄位，選擇剛剛建立的 VPN Tunnel，完成後點擊右下方 <strong>OK</strong></li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image11.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="12">
+<li>建立完成！</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image12.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="13">
+<li>再點擊上方 <strong>Create New</strong> -&gt; <strong>Address</strong>，建立地端環境的網段資訊，<em>IP/Netmask</em> 欄位，輸入地端環境的網段，<em>Interface</em> 欄位，選擇 LAN，LAN 是內部網路能夠互相連線很重要的設定，使用者操作前須了解自身環境網路架構，圖片上的設定可能會與您的有所不同，完成後點擊右下方 <strong>OK</strong></li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image14.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="14">
+<li>建立完成！</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image15.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="15">
+<li>至 <em>Policy &amp; Objects</em>，<em>Firewall Policy</em> 頁面，點擊上方 <strong>Create New</strong>，建立 VPN 的連線規則，因為要讓雲地環境互通有餘，需要建立兩個連線規則，以支持雙方流量進出</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image16.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="16">
+<li>先開通雲端連線地端的規則，依序進行設定，在此列下較重要的設定</li>
+</ol>
+<ul>
+<li>Incoming interface：選擇進來流量的介面，選擇先前建立的 VPN Tunnel</li>
+<li>Outgoing interface：選擇出去流量的介面，選擇 LAN</li>
+<li>Source：選擇進來流量的來源，選擇先前步驟 11 建立的 Address</li>
+<li>Destination：選擇出去流量的目的地，選擇先前步驟 13 建立的 Address</li>
+<li>Service：可限制特定 port 的流量進出</li>
+<li>NAT：依照現行網路架構是否使用 IP Pool，若沒有，關閉此選項</li>
+</ul>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image17.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="17">
+<li>建立完成！</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image18.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="18">
+<li>再點擊上方 <strong>Create New</strong>，開通地端連線雲端的規則，依序進行設定，在此列下較重要的設定</li>
+</ol>
+<ul>
+<li>Incoming interface：選擇進來流量的介面，選擇 LAN</li>
+<li>Outgoing interface：選擇出去流量的介面，選擇先前建立的 VPN Tunnel</li>
+<li>Source：選擇進來流量的來源，選擇先前步驟 13 建立的 Address</li>
+<li>Destination：選擇出去流量的目的地，選擇先前步驟 11 建立的 Address</li>
+<li>Service：可限制特定 port 的流量進出</li>
+<li>NAT：雲端通常不會設定 IP Pool，關閉此選項</li>
+</ul>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image20.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="19">
+<li>建立完成！</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image21.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<h4 id="雲端建立-vpn-tunnel">雲端建立 VPN Tunnel</h4>
+<ol start="20">
+<li>至 <em>Network Connectivity</em>，<em>VPN</em> 頁面，點擊 <strong>CREATE VPN CONNECTION</strong></li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image22.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="21">
+<li>選擇 VPN 類型，此篇操作為設定 Classic VPN，也就是開立一條 VPN Tunnel 的版本</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image23.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="22">
+<li>依照各區塊進行設定，可參考截圖內容及說明進行設定，完成後點擊下方 <strong>CREATE</strong></li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image24.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="23">
+<li>建立成功</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image25.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="24">
+<li><em>CLOUD VPN TUNNELS</em> 頁面，可看到通道已成功連接地端環境！</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image26.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<h4 id="測試連線">測試連線</h4>
+<ol start="25">
+<li>雲端機器 ping 地端機器，若有收到回覆，代表地端環境可以接收雲端環境的流量</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image27.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="26">
+<li>地端機器 ping 雲端機器，若有收到回覆，代表雲端環境可以接收地端環境的流量</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/HYBRID-CLOUD-VPN-CONNECTION/image28.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="27">
+<li>若兩方都能夠互相接收訊息，代表雲地網路已成功連接，接下來可以進行更多混合雲的應用啦！</li>
+</ol>
+<h2 id="結語">結語</h2>
+<p>以上為 VPN 串接雲地環境的操作，</p>
+<p>透過使用 VPN 串接雲端及地端環境，企業能夠充分享受混合雲架構所帶來的諸多好處。</p>
+<p>隨著企業的需求不斷變化，混合雲架構將成為實現數字轉型和業務增長的重要工具，無論是應對高峰負載、進行災難恢復，還是滿足合規要求，混合雲都提供了靈活且高效的解決方案。</p>
+<p>希望這篇文章能啟發您更進一步的學習和研究，感謝您耐心閱讀。如果您有任何相關問題或想要討論，請隨時寄信給我，我們一起來探討吧！</p>
+
+        </div>
+
+        
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="text-capitalize">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-5">
+        <a href="https://blog.goodmanjameslian.com/"><img src="https://blog.goodmanjameslian.com/images/logo-tea2-resized.jpeg" alt="姆斯先生的替身"></a>
+      </div>
+               
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Contact Me</h6>
+        <ul class="list-unstyled">
+          
+                     
+          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Taipei, New Taipei City</li>
+          
+                     
+          <li class="mb-3"><a class="text-dark" href="mailto:j6040650604@yahoo.com.tw"><i
+                class="ti-email mr-3 text-primary"></i>j6040650604@yahoo.com.tw</a>
+          
+          </li>
+        </ul>
+      </div>
+      
+      
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Categories</h6>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/proficiency/">Proficiency</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/reading/">Reading</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Quick Links</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://blog.goodmanjameslian.com/about/">About</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://blog.goodmanjameslian.com/blog/">Post</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-12 border-top py-4 text-center">
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var indexURL = "https://blog.goodmanjameslian.com/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://blog.goodmanjameslian.com/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://blog.goodmanjameslian.com/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://blog.goodmanjameslian.com/plugins/slick/slick.min.js"></script>
+
+<script src="https://blog.goodmanjameslian.com/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://blog.goodmanjameslian.com/plugins/search/fuse.min.js"></script>
+
+<script src="https://blog.goodmanjameslian.com/plugins/search/mark.js"></script>
+
+<script src="https://blog.goodmanjameslian.com/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://blog.goodmanjameslian.com/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+</html>
