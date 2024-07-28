@@ -6,7 +6,17 @@
     <description>Recent content on 姆斯先生的替身</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 27 Jul 2024 15:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Jul 2024 16:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GCP Windows 登入內建 SQL server</title>
+      <link>https://blog.goodmanjameslian.com/blog/gcp-windows-sql-server-login/</link>
+      <pubDate>Sun, 28 Jul 2024 16:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/gcp-windows-sql-server-login/</guid>
+      <description>前言 使用 GCP 提供的使用者登入 Windows server，會發現無法登入 SQL Server。
+這是因為 SQL Server 的 Windows Authentication 是綁定管理員帳號，所以需要使用系統管理員權限開啟。</description>
+    </item>
+    
     <item>
       <title>混合雲 - VPN 串連雲地環境</title>
       <link>https://blog.goodmanjameslian.com/blog/hybrid-cloud-vpn-connection/</link>
