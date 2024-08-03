@@ -6,7 +6,17 @@
     <description>Recent content in Proficiency on 姆斯先生的替身</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 28 Jul 2024 16:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/categories/proficiency/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Aug 2024 19:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/categories/proficiency/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>建立金鑰登入 GCP Linux Server</title>
+      <link>https://blog.goodmanjameslian.com/blog/gcp-login-linux-server/</link>
+      <pubDate>Sat, 03 Aug 2024 19:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/gcp-login-linux-server/</guid>
+      <description>前言 登入 GCP Linux server 需要建立一對公鑰私鑰得以存取伺服器內部資訊。
+此篇使用 Linux server 登入工具 - Putty，其中的 Putty gen 功能，建立公鑰私鑰。</description>
+    </item>
+    
     <item>
       <title>GCP Windows 登入內建 SQL server</title>
       <link>https://blog.goodmanjameslian.com/blog/gcp-windows-sql-server-login/</link>
