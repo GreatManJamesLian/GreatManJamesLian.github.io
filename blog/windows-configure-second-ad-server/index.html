@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>姆斯先生的替身</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="企業資訊系統管理服務營運持續的關鍵">
+  <meta name="author" content="James">
+  
+  <meta property="og:image" content="/images/thumbnail.png">
+  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/windows-configure-second-ad-server/">
+  <meta property="og:type" content="post">
+
+  
+  <meta property="og:title" content="姆斯先生的替身">
+  <meta property="og:description" content="點擊下去，會有好事發生">
+  <meta property="og:image" content="/images/thumbnail.png">
+  <meta property="og:url" content="">
+
+    
+  
+  <meta name="theme-name" content="liva-hugo" />
+  
+  <meta name="generator" content="Hugo 0.119.0">
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://blog.goodmanjameslian.com/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://blog.goodmanjameslian.com/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://blog.goodmanjameslian.com/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://blog.goodmanjameslian.com/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://blog.goodmanjameslian.com/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://blog.goodmanjameslian.com/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://blog.goodmanjameslian.com/images/favicon.png " type="image/x-icon">
+
+  <!-- google analitycs -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'Your ID', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head>
+<body>
+<!-- preloader start -->
+<div class="preloader">
+  
+  <img src="https://blog.goodmanjameslian.com/images/Two-hair.png " alt="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="https://blog.goodmanjameslian.com/"><img class="img-fluid"
+          src="https://blog.goodmanjameslian.com/images/logo-tea2-resized.jpeg" alt="姆斯先生的替身"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+      
+      
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <div class="desktop-view">
+          <ul class="navbar-nav mr-auto">
+            
+          </ul>
+        </div>
+
+        
+        <a class="navbar-brand mx-auto desktop-view" href="https://blog.goodmanjameslian.com/"><img class="img-fluid" src="https://blog.goodmanjameslian.com/images/logo-tea2-resized.jpeg" alt="姆斯先生的替身"></a>
+
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://blog.goodmanjameslian.com/">Home</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://blog.goodmanjameslian.com/about/">About</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://blog.goodmanjameslian.com/blog/">Post</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://blog.goodmanjameslian.com//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 mx-auto">
+        
+        <a href="/categories/proficiency"
+          class="text-primary">Proficiency</a>
+        
+        <h1>WIndows AD server 加入第二台網域控制站</h1>
+        <div class="mb-3 post-meta">
+          <span>By James</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>06 August 2024</span>
+          
+        </div>
+        <div class="content mb-5">
+          <h2 id="前言">前言</h2>
+<p>使用兩台以上網域控制站，具有多個好處：</p>
+<ul>
+<li><strong>高可用性 (High Availability)</strong>：多個網域控制站確保即使其中一個失效，其他控制站仍能處理身份驗證請求和提供其他 AD 服務，從而避免單點故障。</li>
+<li><strong>負載平衡 (Load Balancing)</strong>：多個網域控制站能夠分擔負載，提升整體系統的性能和響應速度。</li>
+<li><strong>容錯能力 (Fault Tolerance)</strong>：當其中一個網域控制站遇到問題或停機時，其他控制站能無縫接手工作，確保營運持續。</li>
+<li><strong>災難復原 (Disaster Recovery)</strong>：多個網域控制站分佈於不同地理位置或網路節點時，可以提高災難復原能力。在單一控制站失效的情況下，系統仍然能保持運行。</li>
+<li><strong>簡化管理 (Simplified Management)</strong>：管理者可以在任何一台網域控制站上進行修改，這些修改會自動複製到其他控制站，簡化了管理操作。</li>
+<li><strong>擴展性 (Scalability)</strong>：隨著組織的成長，可以輕鬆地新增更多網域控制站來滿足增長的需求，而不會對現有系統造成過大影響。</li>
+<li><strong>提高安全性 (Enhanced Security)</strong>：多個控制站的存在可以增加系統的穩定性和安全性，因為即使其中一個控制站遭到攻擊或入侵，其他控制站仍能保護網路和數據。</li>
+</ul>
+<p>以下介紹如何加入第二台網域控制站。</p>
+<h2 id="操作步驟">操作步驟</h2>
+<h4 id="變更網卡設定">變更網卡設定</h4>
+<ol>
+<li>開啟 Command Prompt 介面，輸入 <strong>ipconfig</strong>，查看現有網路配置資訊</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image1.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<p><strong>由於部分內容涉及敏感信息，所以選擇在文章中加以遮蔽</strong></p>
+<ol start="2">
+<li>到網卡設定介面（路徑：<strong>Control panel -&gt; Network and Internet -&gt; Network and Sharing Center -&gt; Change adapter settings -&gt; Properties -&gt; Internet Protocol Version 4</strong>），將現有網路配置資訊，填入到網卡設定介面，DNS server 的部分，<em>Preferred DNS server</em> 欄位指定原網域控制站內部 IP，<em>Alternate DNS server</em> 欄位指定此機器內部 IP</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image2.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image3.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image4.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image5.png"
+         alt="Image" width="800"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image6.png"
+         alt="Image" width="500"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image7.png"
+         alt="Image" width="500"/>
+</figure>
+
+<h4 id="更改設備名稱">更改設備名稱</h4>
+<ol start="3">
+<li>至進階系統設定（路徑：<strong>Control Panel -&gt; System and Security -&gt; System -&gt; Advanced system settings -&gt; Computer Name -&gt; Change&hellip;</strong>），更新電腦名稱，便於識別機器為 AD Server。</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image8.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image9.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image10.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image11.png"
+         alt="Image" width="500"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image12.png"
+         alt="Image" width="500"/>
+</figure>
+
+<ol start="4">
+<li>修改名稱後，需要重新開機，以套用更新的名稱</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image13.png"
+         alt="Image" width="500"/>
+</figure>
+
+<h4 id="加入網域">加入網域</h4>
+<p>5.重啟登入後，至進階系統設定，也就是上述更改設備名稱的位置（路徑：<strong>Control Panel -&gt; System and Security -&gt; System -&gt; Advanced system settings -&gt; Computer Name -&gt; Change&hellip;</strong>），輸入要加入網域的名稱，完成後點擊 <strong>OK</strong></p>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image15.png"
+         alt="Image" width="500"/>
+</figure>
+
+<ol start="6">
+<li>輸入網域管理員帳號，進行驗證</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image16.png"
+         alt="Image" width="500"/>
+</figure>
+
+<ol start="7">
+<li>加入網域後，需重新啟動，以套用設定</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image14.png"
+         alt="Image" width="500"/>
+</figure>
+
+<ol start="8">
+<li>重啟登入後，至進階系統設定（路徑：<strong>Control Panel -&gt; System and Security -&gt; System -&gt; Advanced system settings -&gt; Computer Name</strong>），<em>Compute Name</em> 介面，可看到此機器已加入網域</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image19.png"
+         alt="Image" width="500"/>
+</figure>
+
+<p><em>小叮嚀：若為遠端操作，需使用遠端機器的本機使用者進行登入，登入時在使用者名稱前，輸入「.\」</em></p>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image20.png"
+         alt="Image" width="500"/>
+</figure>
+
+<h4 id="安裝-ad-ds-及-dns-server">安裝 AD DS 及 DNS Server</h4>
+<ol start="9">
+<li>開啟 Serve manager 伺服器管理員，點擊右上方 <strong>Manage -&gt; Add Roles and Features</strong></li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image21.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="10">
+<li>開啟安裝精靈，前面部分選擇預設項目即可，點擊 <strong>Next</strong></li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image22.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image23.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image24.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="11">
+<li><em>Select server roles</em> 介面，勾選 <strong>Active Directory Domain Services</strong> 及 <strong>DNS Server</strong>，會跳出 <em>Add Roles and Features Wizard</em> 視窗，直接點擊下方 <strong>Add Features</strong> 即可。設定完後，點擊 <strong>Next</strong>。</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image25.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image43.png"
+         alt="Image" width="500"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image44.png"
+         alt="Image" width="500"/>
+</figure>
+
+<ol start="12">
+<li>後面的設定保持預設即可，到 <em>Comfirm installation selections</em> 介面，點擊 <strong>install</strong>，將會安裝 AD Server 及 DNS Server。</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image26.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image27.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image28.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image29.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="13">
+<li>安裝成功！</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image30.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<h4 id="將機器升級為-ad-server">將機器升級為 AD Server</h4>
+<ol start="14">
+<li>登出本機使用者，使用網域管理員帳號登入，帳號形式為「<strong>Domain\administrator</strong>」</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image31.png"
+         alt="Image" width="500"/>
+</figure>
+
+<ol start="15">
+<li>登入後，到 Server Manager 伺服器管理員介面，右上方會出現驚嘆號的圖示，展開來點擊 <strong>Promote this server to a domain controller</strong>。</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image32.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="16">
+<li><em>Deployment Configuration</em> 頁面，選擇 <strong>Add a domain controller to an existing domain</strong>，並輸入網域名稱，完成後點擊 <strong>Next</strong></li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image33.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="17">
+<li>設定 DSRM 密碼，DSRM（Directory Service Restore Mode）主要用在進行系統修復或是備份還原時使用。</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image34.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="18">
+<li>中間流程保持預設即可，至安裝頁面，點擊 <strong>Install</strong></li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image35.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image36.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image37.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image38.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image39.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="19">
+<li>登入原先第一台網域控制站，至 <em>Active Directory 使用者和電腦</em>，<em>Domain Controllers</em> 頁面，可以看到已經新增了一台網域控制站，也代表新增第二題網域控制站成功囉！</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image40.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<h4 id="更新網卡-dns-指向">更新網卡 DNS 指向</h4>
+<p>DNS 的配置建議：</p>
+<ul>
+<li>DC1 首選自己，備選 DC2</li>
+<li>DC2 首選自己，備選 DC1</li>
+</ul>
+<p>此配置有助於網域控制站擁有最新的 DNS 資訊，且確保高可用性及冗餘性</p>
+<ol start="20">
+<li>持續在第一台網域控制站，到網卡設定介面（路徑：<strong>Control panel -&gt; Network and Internet -&gt; Network and Sharing Center -&gt; Change adapter settings -&gt; Properties -&gt; Internet Protocol Version 4</strong>），將下方 DNS 兩行欄位，<em>慣用 DNS 伺服器</em> 輸入自己的內部 IP 位址，<em>其他 DNS 伺服器</em> 輸入第二台網域控制站的內部 IP 位址，完成後點擊 <strong>OK</strong></li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image41.png"
+         alt="Image" width="500"/>
+</figure>
+
+<ol start="21">
+<li>接下來登入到第二台網域控制站，一樣到網卡設定介面（路徑：<strong>Control panel -&gt; Network and Internet -&gt; Network and Sharing Center -&gt; Change adapter settings -&gt; Properties -&gt; Internet Protocol Version 4</strong>），將下方 DNS 兩行欄位，<em>Preferred DNS server</em> 輸入自己的內部 IP 位址，<em>Alternate DNS server</em> 輸入第一台網域控制站的內部 IP 位址，完成後點擊 <strong>OK</strong></li>
+</ol>
+<figure class="image-frame"><img src="/images/post/WINDOWS-CONFIGURE-SECOND-AD-SERVER/image42.png"
+         alt="Image" width="500"/>
+</figure>
+
+<p><strong>因為機器升級為網域控制器，本機的 Administrator 被取代變為網域的管理員帳號，所以需使用網域管理員帳號密碼登入</strong></p>
+<p>此篇文章第一台和第二台網域控制站，使用的語言不一樣，所以顯示的內容也會不一樣，可參考圖片內容的相對位置進行配置</p>
+<h2 id="結語">結語</h2>
+<p>以上為加入第二台網域控制站的方法，</p>
+<p>隨著組織的不斷擴展和 IT 基礎設施的日益複雜，多台網域控制器為網絡管理者提供了靈活且高效的解決方案。它不僅簡化了管理工作，還增強了系統的恢復能力，進一步保護了關鍵資料及業務營運，是個很重要的功能。</p>
+<p>希望這篇文章能啟發您更進一步的學習和研究，感謝您耐心閱讀。如果您有任何相關問題或想要討論，請隨時寄信給我，我們一起來探討吧！</p>
+
+        </div>
+
+        
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="text-capitalize">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-5">
+        <a href="https://blog.goodmanjameslian.com/"><img src="https://blog.goodmanjameslian.com/images/logo-tea2-resized.jpeg" alt="姆斯先生的替身"></a>
+      </div>
+               
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Contact Me</h6>
+        <ul class="list-unstyled">
+          
+                     
+          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Taipei, New Taipei City</li>
+          
+                     
+          <li class="mb-3"><a class="text-dark" href="mailto:j6040650604@yahoo.com.tw"><i
+                class="ti-email mr-3 text-primary"></i>j6040650604@yahoo.com.tw</a>
+          
+          </li>
+        </ul>
+      </div>
+      
+      
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Categories</h6>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/proficiency/">Proficiency</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/reading/">Reading</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Quick Links</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://blog.goodmanjameslian.com/about/">About</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://blog.goodmanjameslian.com/blog/">Post</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-12 border-top py-4 text-center">
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var indexURL = "https://blog.goodmanjameslian.com/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://blog.goodmanjameslian.com/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://blog.goodmanjameslian.com/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://blog.goodmanjameslian.com/plugins/slick/slick.min.js"></script>
+
+<script src="https://blog.goodmanjameslian.com/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://blog.goodmanjameslian.com/plugins/search/fuse.min.js"></script>
+
+<script src="https://blog.goodmanjameslian.com/plugins/search/mark.js"></script>
+
+<script src="https://blog.goodmanjameslian.com/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://blog.goodmanjameslian.com/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+</html>

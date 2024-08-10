@@ -6,7 +6,17 @@
     <description>Recent content in Windows on 姆斯先生的替身</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 02 Jul 2024 22:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Aug 2024 19:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WIndows AD server 加入第二台網域控制站</title>
+      <link>https://blog.goodmanjameslian.com/blog/windows-configure-second-ad-server/</link>
+      <pubDate>Tue, 06 Aug 2024 19:30:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/windows-configure-second-ad-server/</guid>
+      <description>前言 使用兩台以上網域控制站，具有多個好處：
+高可用性 (High Availability)：多個網域控制站確保即使其中一個失效，其他控制站仍能處理身份驗證請求和提供其他 AD 服務，從而避免單點故障。 負載平衡 (Load Balancing)：多個網域控制站能夠分擔負載，提升整體系統的性能和響應速度。 容錯能力 (Fault Tolerance)：當其中一個網域控制站遇到問題或停機時，其他控制站能無縫接手工作，確保營運持續。 災難復原 (Disaster Recovery)：多個網域控制站分佈於不同地理位置或網路節點時，可以提高災難復原能力。在單一控制站失效的情況下，系統仍然能保持運行。 簡化管理 (Simplified Management)：管理者可以在任何一台網域控制站上進行修改，這些修改會自動複製到其他控制站，簡化了管理操作。 擴展性 (Scalability)：隨著組織的成長，可以輕鬆地新增更多網域控制站來滿足增長的需求，而不會對現有系統造成過大影響。 提高安全性 (Enhanced Security)：多個控制站的存在可以增加系統的穩定性和安全性，因為即使其中一個控制站遭到攻擊或入侵，其他控制站仍能保護網路和數據。 以下介紹如何加入第二台網域控制站。</description>
+    </item>
+    
     <item>
       <title>建立 Windows AD Server</title>
       <link>https://blog.goodmanjameslian.com/blog/windows-configure-ad-server/</link>
