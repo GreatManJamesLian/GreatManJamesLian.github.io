@@ -5,11 +5,11 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="提升網路安全好幫手">
+  <meta name="description" content="異地備援最佳實踐">
   <meta name="author" content="James">
   
   <meta property="og:image" content="/images/thumbnail.png">
-  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/nat-gateway-introduction/">
+  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/hybrid-cloud-deploy-ad-server/">
   <meta property="og:type" content="post">
 
   
@@ -141,33 +141,41 @@
         <a href="/categories/proficiency"
           class="text-primary">Proficiency</a>
         
-        <h1>NAT Gateway 的功能與應用</h1>
+        <h1>混合雲架構部署 AD Server</h1>
         <div class="mb-3 post-meta">
           <span>By James</span>
           
           <span class="border-bottom border-primary px-2 mx-1"></span>
-          <span>16 June 2024</span>
+          <span>16 August 2024</span>
           
         </div>
         <div class="content mb-5">
-          <h2 id="主要功能">主要功能</h2>
-<p>NAT Gateway 得以讓存在於私人網段 (Private subnet) 的伺服器，可以連線到網際網路，通常用於伺服器作業系統版本更新和補丁，或是其他相關需要連線到網際網路的需求。</p>
-<p>NAT Gateway 放在公開網段 (Public subnet)，是一個<strong>讓私人網段的伺服器路由 (Route) 到網際網路閘道 (Internet gateway)，並連線至網際網路的媒介。</strong></p>
-<p>就像是連線家庭網路，有一個對外 IP 可以連線到網際網路，提供家中設備上網的功能，外部卻無法訪問到家中的設備，大大提升了環境安全性！</p>
+          <h2 id="前言">前言</h2>
+<p>將 AD 的兩台網域控制站（Domain Controller）存放在物理區域上不同位置，除了有高可用性 (High Availability)、負載平衡 (Load Balancing)、容錯能力 (Fault Tolerance)、災難復原 (Disaster Recovery)、簡化管理 (Simplified Management)、擴展性 (Scalability)、提高安全性 (Enhanced Security) 功能外，更能達到<strong>異地備援 (Remote Backup)</strong> 的效果。</p>
+<p>若不幸本地機房發生故障（希望不要遇到&hellip;），尚有網域控制站持續運行。</p>
+<p>本篇分享混合雲架構，部署 AD Server。</p>
 <h2 id="架構圖">架構圖</h2>
-<p>以 AWS 網路環境 VPC 為例</p>
-<figure><img src="/images/post/NAT-GATEWAY-INTRODUCTION/image1.png"
+<p>此架構圖雲端環境以 GCP 為例，並使用 IPSec VPN 實踐雲地環境整合</p>
+<figure><img src="/images/post/HYBRID-CLOUD-DEPLOY-AD-SERVER/image1.png"
          alt="Image" width="2000"/>
 </figure>
 
-<h2 id="相關專有名詞說明">相關專有名詞說明</h2>
-<p>VPC：全名為 Virtual Private Cloud，是雲端服務 (AWS、GCP、Azure…) 提供的一個虛擬網路環境服務，可依使用者需求切分子網段 (Subnet)</p>
-<p>Availablility zone：可用區域，雲端服務針對各地區（Region）規畫出物理上獨立的資料中心（Data center）群組</p>
-<p>Public subnet：網段之路由有連接網際網路閘道(Internet gateway)，所以可以連線網際網路</p>
-<p>Private subnet：網段之路由沒有連接網際網路閘道，所以不能連線網際網路</p>
+<h2 id="相關操作建議">相關操作建議</h2>
+<ol>
+<li>
+<p>地端建立第一台 AD Server 網域控制站，相關操作可參考 - <a href="https://blog.goodmanjameslian.com/blog/windows-configure-ad-server/">建立 Windows AD Server</a></p>
+</li>
+<li>
+<p>建立 VPN 整合雲地環境，相關操作可參考 - <a href="https://blog.goodmanjameslian.com/blog/hybrid-cloud-vpn-connection/">混合雲 - VPN 串連雲地環境</a></p>
+</li>
+<li>
+<p>雲端建立第二台 AD Server 網域控制站，相關操作可參考 - <a href="https://blog.goodmanjameslian.com/blog/windows-configure-second-ad-server/">WIndows AD server 加入第二台網域控制站</a></p>
+</li>
+</ol>
 <h2 id="結語">結語</h2>
-<p>NAT Gateway 可增加內部系統的安全性，減低外在資安風險。雖然此功能已是較久以前增加內部機器安全性的方法，現行雲端服務已經有替代此功能的服務（像是 VPC Peering），除了更加安全，而且費用比 NAT Gateway 便宜，不過此服務只在 AWS 才有。</p>
-<p>NAT Gateway 在網路世界中應用更加廣泛，可以在很多網路世界應用，不論是地端或是雲端。所以需要了解 NAT Gateway 原理及設定，後續會說明如何在網路環境設定 NAT Gateway。</p>
+<p>上述為混合雲架構，部署 AD Server，</p>
+<p>混合雲架構不僅可以使用在 AD Server，其他系統也可以雲地整合，例如：伺服器運行在地端，定期備份存放雲端，達到異地備份的效果。</p>
+<p>總之，使用混合雲架構，更能確保系統能持續營運，也保持資料完整性！</p>
 <p>希望這篇文章能啟發您更進一步的學習和研究，感謝您耐心閱讀。如果您有任何相關問題或想要討論，請隨時寄信給我，我們一起來探討吧！</p>
 
         </div>

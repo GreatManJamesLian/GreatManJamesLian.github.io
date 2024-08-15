@@ -8,9 +8,18 @@
     <language>zh-tw</language>
     <lastBuildDate>Tue, 29 Oct 2019 13:49:23 +0600</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>混合雲架構部署 AD Server</title>
+      <link>https://blog.goodmanjameslian.com/blog/hybrid-cloud-deploy-ad-server/</link>
+      <pubDate>Fri, 16 Aug 2024 00:30:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/hybrid-cloud-deploy-ad-server/</guid>
+      <description>前言 將 AD 的兩台網域控制站（Domain Controller）存放在物理區域上不同位置，除了有高可用性 (High Availability)、負載平衡 (Load Balancing)、容錯能力 (Fault Tolerance)、災難復原 (Disaster Recovery)、簡化管理 (Simplified Management)、擴展性 (Scalability)、提高安全性 (Enhanced Security) 功能外，更能達到異地備援 (Remote Backup) 的效果。</description>
+    </item>
+    
+    <item>
       <title>WIndows AD server 加入第二台網域控制站</title>
       <link>https://blog.goodmanjameslian.com/blog/windows-configure-second-ad-server/</link>
-      <pubDate>Tue, 06 Aug 2024 19:30:00 +0800</pubDate>
+      <pubDate>Sat, 10 Aug 2024 14:00:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/blog/windows-configure-second-ad-server/</guid>
       <description>前言 使用兩台以上網域控制站，具有多個好處：

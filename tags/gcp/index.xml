@@ -6,7 +6,16 @@
     <description>Recent content in GCP on 姆斯先生的替身</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 03 Aug 2024 19:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Aug 2024 00:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>混合雲架構部署 AD Server</title>
+      <link>https://blog.goodmanjameslian.com/blog/hybrid-cloud-deploy-ad-server/</link>
+      <pubDate>Fri, 16 Aug 2024 00:30:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/hybrid-cloud-deploy-ad-server/</guid>
+      <description>前言 將 AD 的兩台網域控制站（Domain Controller）存放在物理區域上不同位置，除了有高可用性 (High Availability)、負載平衡 (Load Balancing)、容錯能力 (Fault Tolerance)、災難復原 (Disaster Recovery)、簡化管理 (Simplified Management)、擴展性 (Scalability)、提高安全性 (Enhanced Security) 功能外，更能達到異地備援 (Remote Backup) 的效果。</description>
+    </item>
+    
     <item>
       <title>建立金鑰登入 GCP Linux Server</title>
       <link>https://blog.goodmanjameslian.com/blog/gcp-login-linux-server/</link>

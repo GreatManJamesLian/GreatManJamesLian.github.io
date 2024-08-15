@@ -6,11 +6,20 @@
     <description>Recent content in Windows on 姆斯先生的替身</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 06 Aug 2024 19:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Aug 2024 00:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>混合雲架構部署 AD Server</title>
+      <link>https://blog.goodmanjameslian.com/blog/hybrid-cloud-deploy-ad-server/</link>
+      <pubDate>Fri, 16 Aug 2024 00:30:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/hybrid-cloud-deploy-ad-server/</guid>
+      <description>前言 將 AD 的兩台網域控制站（Domain Controller）存放在物理區域上不同位置，除了有高可用性 (High Availability)、負載平衡 (Load Balancing)、容錯能力 (Fault Tolerance)、災難復原 (Disaster Recovery)、簡化管理 (Simplified Management)、擴展性 (Scalability)、提高安全性 (Enhanced Security) 功能外，更能達到異地備援 (Remote Backup) 的效果。</description>
+    </item>
+    
     <item>
       <title>WIndows AD server 加入第二台網域控制站</title>
       <link>https://blog.goodmanjameslian.com/blog/windows-configure-second-ad-server/</link>
-      <pubDate>Tue, 06 Aug 2024 19:30:00 +0800</pubDate>
+      <pubDate>Sat, 10 Aug 2024 14:00:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/blog/windows-configure-second-ad-server/</guid>
       <description>前言 使用兩台以上網域控制站，具有多個好處：
@@ -25,6 +34,16 @@
       <guid>https://blog.goodmanjameslian.com/blog/windows-configure-ad-server/</guid>
       <description>前言 當今企業面臨著越來越多的挑戰，無論是管理大量的用戶和資源，還是確保網絡安全和數據保護。為了有效地應對這些挑戰，企業需要一個強大且靈活的目錄服務來支持其 IT 基礎設施。這正是 AD Server 所擅長的領域。
 本文將介紹如何建立 AD Server。</description>
+    </item>
+    
+    <item>
+      <title>Windows 安裝 OpenSSL</title>
+      <link>https://blog.goodmanjameslian.com/blog/windows-install-openssl/</link>
+      <pubDate>Sun, 05 May 2024 21:30:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/windows-install-openssl/</guid>
+      <description>前言 OpenSSL 為開源的加密套件，被廣泛應用於通訊、加密數據和證書管理等領域，在保護資料傳輸和確保資訊安全方面起到關鍵作用。
+操作步驟 至下載頁面下載 Openssl，EXE 檔案 下載完後，開啟安裝精靈，同意條款，點擊 Next 安裝路徑選擇預設即可，點擊 Next 選擇程式的捷徑，保持預設即可，點擊 Next Select Additional Tasks，預設即可，點擊 Next 確認並點擊 Install 鍵盤按下 Win+R，輸入 &amp;ldquo;sysdm.</description>
     </item>
     
   </channel>
