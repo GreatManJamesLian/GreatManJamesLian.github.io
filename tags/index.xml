@@ -6,7 +6,34 @@
     <description>Recent content in Tags on 姆斯先生的替身</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 16 Aug 2024 00:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Aug 2024 17:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI</title>
+      <link>https://blog.goodmanjameslian.com/tags/ai/</link>
+      <pubDate>Thu, 22 Aug 2024 17:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS</title>
+      <link>https://blog.goodmanjameslian.com/tags/aws/</link>
+      <pubDate>Thu, 22 Aug 2024 17:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloud</title>
+      <link>https://blog.goodmanjameslian.com/tags/cloud/</link>
+      <pubDate>Thu, 22 Aug 2024 17:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>GCP</title>
       <link>https://blog.goodmanjameslian.com/tags/gcp/</link>
@@ -35,15 +62,6 @@
     </item>
     
     <item>
-      <title>Cloud</title>
-      <link>https://blog.goodmanjameslian.com/tags/cloud/</link>
-      <pubDate>Sat, 03 Aug 2024 19:00:00 +0800</pubDate>
-      
-      <guid>https://blog.goodmanjameslian.com/tags/cloud/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>GCE</title>
       <link>https://blog.goodmanjameslian.com/tags/gce/</link>
       <pubDate>Sat, 03 Aug 2024 19:00:00 +0800</pubDate>
@@ -58,15 +76,6 @@
       <pubDate>Sat, 27 Jul 2024 15:00:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/tags/fortigate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AWS</title>
-      <link>https://blog.goodmanjameslian.com/tags/aws/</link>
-      <pubDate>Wed, 17 Jul 2024 22:00:00 +0800</pubDate>
-      
-      <guid>https://blog.goodmanjameslian.com/tags/aws/</guid>
       <description></description>
     </item>
     

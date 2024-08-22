@@ -6,7 +6,16 @@
     <description>Recent content on 姆斯先生的替身</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 16 Aug 2024 00:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Aug 2024 17:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode 安裝 Amazon Q Developer</title>
+      <link>https://blog.goodmanjameslian.com/blog/vscode-install-amazon-q-developer/</link>
+      <pubDate>Thu, 22 Aug 2024 17:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/vscode-install-amazon-q-developer/</guid>
+      <description>前言 近期 Amazon 推出一款生成式 AI 對話助理 Amazon Q Developer，協助使用者理解、建立以及運作 AWS 服務或是自有的應用程式。</description>
+    </item>
+    
     <item>
       <title>混合雲架構部署 AD Server</title>
       <link>https://blog.goodmanjameslian.com/blog/hybrid-cloud-deploy-ad-server/</link>
