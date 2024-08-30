@@ -5,11 +5,11 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="協助開發測試的開源虛擬化軟體">
+  <meta name="description" content="啟動 Ubuntu 開發環境">
   <meta name="author" content="James">
   
   <meta property="og:image" content="/images/thumbnail.png">
-  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/virtualbox-installation/">
+  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/virtualbox-start-ubuntu-server/">
   <meta property="og:type" content="post">
 
   
@@ -139,89 +139,209 @@
         <a href="/categories/proficiency"
           class="text-primary">Proficiency</a>
         
-        <h1>安裝 VirtualBox</h1>
+        <h1>VirtualBox 啟動 Ubuntu Server</h1>
         <div class="mb-3 post-meta">
           <span>By James</span>
           
           <span class="border-bottom border-primary px-2 mx-1"></span>
-          <span>25 August 2024</span>
+          <span>30 August 2024</span>
           
         </div>
         <div class="content mb-5">
           <h2 id="前言">前言</h2>
-<p>VirtualBox 是 Oracle 公司開發的一款免費開源虛擬化軟體，允許使用者在一台電腦上創建和運行多台虛擬機，並支援多個作業系統，如 Windows、Linux、Mac&hellip;等，在一台電腦上模擬多個獨立的運算空間。</p>
-<p>VirtualBox 的一些主要功能：</p>
-<ol>
-<li><strong>跨平台支持</strong>：可以在 Windows、Linux、macOS 作業系统上運行。</li>
-<li><strong>支援多種作業系統</strong>：可以在 Windows、Linux、Mac 及其他較為小眾的作業系統。</li>
-<li><strong>快照功能</strong>：可以保存虛擬機的當前狀態，在需要時恢復到保存的狀態，便於測試和故障排除。</li>
-<li><strong>共用資料夾</strong>：允許主機作業系统和虛擬機之間共用資料夾，便於檔案傳輸。</li>
-<li><strong>網路配置</strong>：提供多種網路模式，如 NAT、橋接、内部網路等，模擬不同網路環境。</li>
-<li><strong>支持 USB</strong>：可以直接訪問實體主機的 USB 設備。</li>
-</ol>
-<p>此篇文章介紹如何下載及安裝 Virtual box。</p>
+<p>由於 Ubuntu 有著易用性、穩定性、安全更新以及技術支持，更重要的是此軟體為免費開源，所以成為最常用的 Linux 作業系統。</p>
+<p>本篇將介紹，如何使用 VirtualBox 啟動 Ubuntu server。</p>
+<p>若尚未安裝 VirtualBox，相關資訊及操作可參考<a href="https://blog.goodmanjameslian.com/blog/virtualbox-installation/">安裝 VirtualBox</a>。</p>
 <h2 id="前置作業">前置作業</h2>
-<p>VirtualBox 某些套件是使用 Microsoft Visual C++ 開發，所以安裝 VirtualBox 之前，主機需要先安裝 <a href="https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist?view=msvc-170">Microsoft Visual C++ 可轉發套件</a>，依照主機 CPU 架構，下載相對應的安裝檔。</p>
-<figure class="image-frame"><img src="/images/post/VIRTUALBOX-INSTALLATION/image1.png"
-         alt="Image" width="2000"/>
+<ol>
+<li>需要先至 Ubuntu 官網下載<a href="https://releases.ubuntu.com/">作業系統的映像檔</a>，後續安裝時方可匯入，本篇是使用 Ubuntu 22.04 LTS Server 版本</li>
+</ol>
+<p>其他作業系統的供應商官網也可以下載相對應的映像檔：
+<a href="https://www.microsoft.com/zh-tw/software-download">Windows server</a>、
+<a href="https://fedoraproject.org/server/download">Fendora server</a>、
+<a href="https://www.debian.org/distrib/netinst">Debian</a>、
+<a href="https://www.centos.org/download/">CentOS</a></p>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image28.png"
+         alt="Image" width="800"/>
 </figure>
 
 <h2 id="操作步驟">操作步驟</h2>
+<h4 id="建立虛擬機">建立虛擬機</h4>
 <ol>
-<li>至 <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> 官方網站，依照主機的作業系統下載相對應的安裝檔</li>
+<li>開啟 VirtualBox，點擊<strong>新增</strong></li>
 </ol>
-<figure class="image-frame"><img src="/images/post/VIRTUALBOX-INSTALLATION/image2.png"
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image1.png"
          alt="Image" width="2000"/>
 </figure>
 
 <ol start="2">
-<li>下載完成後開啟安裝精靈</li>
+<li>為虛擬機取名稱，<em>ISO 映像</em>欄位，選擇上述下載的 Ubuntu 映像檔，完成後點擊<strong>下一步</strong></li>
 </ol>
-<figure class="image-frame"><img src="/images/post/VIRTUALBOX-INSTALLATION/image3.png"
-         alt="Image" width="800"/>
-</figure>
-
-<ol start="3">
-<li>安裝內容保持預設即可，中間會有網卡更改的提醒，可能也會提醒我們缺少哪些套件，點擊「<strong>是</strong>」持續進行安裝流程即可</li>
-</ol>
-<figure class="image-frame"><img src="/images/post/VIRTUALBOX-INSTALLATION/image4.png"
-         alt="Image" width="800"/>
-</figure>
-
-<figure class="image-frame"><img src="/images/post/VIRTUALBOX-INSTALLATION/image5.png"
-         alt="Image" width="800"/>
-</figure>
-
-<figure class="image-frame"><img src="/images/post/VIRTUALBOX-INSTALLATION/image6.png"
-         alt="Image" width="800"/>
-</figure>
-
-<figure class="image-frame"><img src="/images/post/VIRTUALBOX-INSTALLATION/image7.png"
-         alt="Image" width="800"/>
-</figure>
-
-<figure class="image-frame"><img src="/images/post/VIRTUALBOX-INSTALLATION/image8.png"
-         alt="Image" width="800"/>
-</figure>
-
-<ol start="4">
-<li>安裝成功畫面，點擊<strong>完成</strong></li>
-</ol>
-<figure class="image-frame"><img src="/images/post/VIRTUALBOX-INSTALLATION/image9.png"
-         alt="Image" width="800"/>
-</figure>
-
-<ol start="5">
-<li>可看到成功開啟 VirtualBox 頁面！</li>
-</ol>
-<figure class="image-frame"><img src="/images/post/VIRTUALBOX-INSTALLATION/image10.png"
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image2.png"
          alt="Image" width="2000"/>
 </figure>
 
+<ol start="3">
+<li>設定使用者及主機名稱，完成後點<strong>下一步</strong></li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image3.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="4">
+<li>配置效能，開發測試用虛擬機規格建議為 1~2 CPU，2~4 GB RAM，完成後點擊<strong>下一步</strong></li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image4.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="5">
+<li>配置儲存空間，建議配置 25 GB 即可，完成後點擊<strong>下一步</strong></li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image5.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<ol start="6">
+<li>配置摘要，檢查先前配置的內容，若無問題，點擊<strong>完成</strong>，接下來會啟動虛擬機，我們將登入虛擬機進行初始配置。</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image6.png"
+         alt="Image" width="2000"/>
+</figure>
+
+<h4 id="ubuntu-初始配置">Ubuntu 初始配置</h4>
+<ol start="7">
+<li>選擇系統語言，建議使用預設英文</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image8.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="8">
+<li>鍵盤設定，建議使用預設英文，會有一些鍵盤測試，照實回答即可</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image9.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image10.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image11.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image12.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="9">
+<li>選擇 <strong>Ubuntu Server</strong> 作為要安裝的作業系統</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image13.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="10">
+<li>網路的部分，可依照需求設定，後續也可以操作，在此使用預設即可</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image14.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="11">
+<li>無需設定 Proxy，跳過即可</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image15.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="12">
+<li>archive mirror，配置 Ubuntu 軟體倉庫位置，連線測試通過後再到下一步</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image16.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="13">
+<li>Storage 的部分，可以啟用或是關閉 LVM 的設定，因為是測試及開發環境，不採用 LVM 即可</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image17.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="14">
+<li>確認儲存空間的設定，確認配置</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image18.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image19.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="15">
+<li>設定使用者及設備名稱，以及登入密碼</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image20.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="16">
+<li>不升級為 Ubuntu pro，略過即可</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image21.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="17">
+<li>建議安裝 OpenSSH，讓使用者可以遠端連線至此 Server 進行操作</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image22.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="18">
+<li>可依需求選擇要下載的服務</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image23.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="19">
+<li>執行安裝</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image24.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="20">
+<li>安裝完成後，重新啟動機器</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image25.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="21">
+<li>重啟完成後．登入機器</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image26.png"
+         alt="Image" width="1000"/>
+</figure>
+
+<ol start="22">
+<li>登入成功的話，也代表成功建立起 Ubuntu Server 囉！</li>
+</ol>
+<figure class="image-frame"><img src="/images/post/VIRTUALBOX-START-UBUNTU-SERVER/image27.png"
+         alt="Image" width="1000"/>
+</figure>
+
 <h2 id="結語">結語</h2>
-<p>以上為下載及安裝 VirtualBox 的流程，</p>
-<p>VirtualBox 被廣泛應用於軟體開發、測試以及系统管理等場景中，因為它能夠提供一個隔離、安全且可控的測試和開發環境。</p>
-<p>接下來可以依照需求，安裝相對應的作業系統，VirtualBox 啟動 Ubuntu server，可參考<a href="https://blog.goodmanjameslian.com/blog/virtualbox-start-ubuntu-server/">此篇文章</a></p>
+<p>以上為使用 VirtualBox 啟動 Ubuntu server 操作流程。</p>
+<p>透過 VirtualBox 啟動 Ubuntu Server，不僅能夠在不同環境中測試和開發，還能充分利用 Ubuntu 的強大功能和開源優勢。</p>
+<p>無論是進行學習、開發還是部署應用，這種虛擬化方法都能提供靈活、安全且經濟的解決方案。</p>
 <p>希望這篇文章能啟發您更進一步的學習和研究，感謝您耐心閱讀。如果您有任何相關問題或想要討論，請隨時寄信給我，我們一起來探討吧！</p>
 
         </div>
