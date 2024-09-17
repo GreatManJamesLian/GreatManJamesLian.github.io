@@ -6,7 +6,17 @@
     <description>Recent content on 姆斯先生的替身</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 30 Aug 2024 15:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Sep 2024 10:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VirtualBox 虛擬機網路配置</title>
+      <link>https://blog.goodmanjameslian.com/blog/virtualbox-vm-network-configuration/</link>
+      <pubDate>Sun, 01 Sep 2024 10:30:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/virtualbox-vm-network-configuration/</guid>
+      <description>前言 建立好虛擬機之後，會發現雖然可以連到網際網路，但無法和宿主機以及和宿主機相同網路內的機器互相連線。
+這是因為 VirtualBox 預設的網路配置為「NAT」，會把宿主機和虛擬機的網段分開，虛擬機能連接到網際網路，是因為 NAT 的特性，NAT 的相關說明，可參考 NAT Gateway 的功能與應用。</description>
+    </item>
+    
     <item>
       <title>VirtualBox 啟動 Ubuntu Server</title>
       <link>https://blog.goodmanjameslian.com/blog/virtualbox-start-ubuntu-server/</link>
