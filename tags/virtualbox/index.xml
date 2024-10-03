@@ -6,11 +6,11 @@
     <description>Recent content in VirtualBox on 姆斯先生的替身</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 01 Sep 2024 10:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Sep 2024 21:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VirtualBox 虛擬機網路配置</title>
       <link>https://blog.goodmanjameslian.com/blog/virtualbox-vm-network-configuration/</link>
-      <pubDate>Sun, 01 Sep 2024 10:30:00 +0800</pubDate>
+      <pubDate>Tue, 17 Sep 2024 21:30:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/blog/virtualbox-vm-network-configuration/</guid>
       <description>前言 建立好虛擬機之後，會發現雖然可以連到網際網路，但無法和宿主機以及和宿主機相同網路內的機器互相連線。

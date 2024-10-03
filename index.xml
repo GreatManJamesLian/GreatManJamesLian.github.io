@@ -6,11 +6,22 @@
     <description>Recent content on 姆斯先生的替身</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 01 Sep 2024 10:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Sep 2024 20:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu 安裝 Docker 及 Docker Compose</title>
+      <link>https://blog.goodmanjameslian.com/blog/docker-installation/</link>
+      <pubDate>Thu, 19 Sep 2024 20:30:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/docker-installation/</guid>
+      <description>前言 容器化架構是現代化系統必備的要件之一，方便易管理，且具彈性。Docker 是目前很受歡迎的容器平台。
+透過 Docker，我們能夠輕鬆地將應用程式及其依賴項打包成標準化的容器，並能夠在不同的環境中無縫運行。
+而 Docker Compose 則進一步簡化了多容器應用的部署，讓我們能夠使用簡單的 YAML 文件定義和管理多個容器的關係與配置。</description>
+    </item>
+    
     <item>
       <title>VirtualBox 虛擬機網路配置</title>
       <link>https://blog.goodmanjameslian.com/blog/virtualbox-vm-network-configuration/</link>
-      <pubDate>Sun, 01 Sep 2024 10:30:00 +0800</pubDate>
+      <pubDate>Tue, 17 Sep 2024 21:30:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/blog/virtualbox-vm-network-configuration/</guid>
       <description>前言 建立好虛擬機之後，會發現雖然可以連到網際網路，但無法和宿主機以及和宿主機相同網路內的機器互相連線。
