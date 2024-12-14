@@ -6,11 +6,21 @@
     <description>Recent content in Proficiency on 姆斯先生的替身</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 19 Sep 2024 20:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/categories/proficiency/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Dec 2024 14:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/categories/proficiency/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS 使用 Session Manager 實現無金鑰安全登入 EC2</title>
+      <link>https://blog.goodmanjameslian.com/blog/aws-sign-in-ec2-without-key/</link>
+      <pubDate>Sat, 14 Dec 2024 14:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/aws-sign-in-ec2-without-key/</guid>
+      <description>前言 使用金鑰檔案登入 EC2 雖然方便，但需要將金鑰檔案保存在本地端，存在外洩風險，進而增加資安隱患。
+為解決這一問題，AWS 提供了 Session Manager 功能，允許使用者無需金鑰檔案，直接通過 AWS 管理介面安全地登入並操作 EC2。這不僅消除了金鑰外洩的風險，還顯著提升了資安防護水平和管理效率。</description>
+    </item>
+    
     <item>
       <title>Ubuntu 安裝 Docker 及 Docker Compose</title>
       <link>https://blog.goodmanjameslian.com/blog/docker-installation/</link>
-      <pubDate>Thu, 19 Sep 2024 20:30:00 +0800</pubDate>
+      <pubDate>Thu, 03 Oct 2024 21:30:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/blog/docker-installation/</guid>
       <description>前言 容器化架構是現代化系統必備的要件之一，方便易管理，且具彈性。Docker 是目前很受歡迎的容器平台。
