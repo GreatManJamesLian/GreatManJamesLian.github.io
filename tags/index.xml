@@ -6,11 +6,11 @@
     <description>Recent content in Tags on 姆斯先生的替身</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 14 Dec 2024 14:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Mar 2025 23:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS</title>
       <link>https://blog.goodmanjameslian.com/tags/aws/</link>
-      <pubDate>Sat, 14 Dec 2024 14:00:00 +0800</pubDate>
+      <pubDate>Fri, 28 Mar 2025 23:00:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/tags/aws/</guid>
       <description></description>
@@ -19,7 +19,7 @@
     <item>
       <title>Cloud</title>
       <link>https://blog.goodmanjameslian.com/tags/cloud/</link>
-      <pubDate>Sat, 14 Dec 2024 14:00:00 +0800</pubDate>
+      <pubDate>Fri, 28 Mar 2025 23:00:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/tags/cloud/</guid>
       <description></description>
@@ -28,9 +28,36 @@
     <item>
       <title>EC2</title>
       <link>https://blog.goodmanjameslian.com/tags/ec2/</link>
-      <pubDate>Sat, 14 Dec 2024 14:00:00 +0800</pubDate>
+      <pubDate>Fri, 28 Mar 2025 23:00:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/tags/ec2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://blog.goodmanjameslian.com/tags/security/</link>
+      <pubDate>Fri, 28 Mar 2025 23:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Systems Manager</title>
+      <link>https://blog.goodmanjameslian.com/tags/systems-manager/</link>
+      <pubDate>Fri, 28 Mar 2025 23:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/tags/systems-manager/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://blog.goodmanjameslian.com/tags/windows/</link>
+      <pubDate>Fri, 28 Mar 2025 23:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/tags/windows/</guid>
       <description></description>
     </item>
     
@@ -40,24 +67,6 @@
       <pubDate>Sat, 14 Dec 2024 14:00:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Security</title>
-      <link>https://blog.goodmanjameslian.com/tags/security/</link>
-      <pubDate>Sat, 14 Dec 2024 14:00:00 +0800</pubDate>
-      
-      <guid>https://blog.goodmanjameslian.com/tags/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Systems Manager</title>
-      <link>https://blog.goodmanjameslian.com/tags/systems-manager/</link>
-      <pubDate>Sat, 14 Dec 2024 14:00:00 +0800</pubDate>
-      
-      <guid>https://blog.goodmanjameslian.com/tags/systems-manager/</guid>
       <description></description>
     </item>
     
@@ -103,15 +112,6 @@
       <pubDate>Fri, 16 Aug 2024 00:30:00 +0800</pubDate>
       
       <guid>https://blog.goodmanjameslian.com/tags/hybrid-cloud/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Windows</title>
-      <link>https://blog.goodmanjameslian.com/tags/windows/</link>
-      <pubDate>Fri, 16 Aug 2024 00:30:00 +0800</pubDate>
-      
-      <guid>https://blog.goodmanjameslian.com/tags/windows/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backup on 姆斯先生的替身</title>
+    <link>https://blog.goodmanjameslian.com/tags/backup/</link>
+    <description>Recent content in Backup on 姆斯先生的替身</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Thu, 30 May 2024 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/backup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GCP GCE 設定自動備份排程</title>
+      <link>https://blog.goodmanjameslian.com/blog/gcp-configure-snapshot-schedule/</link>
+      <pubDate>Thu, 30 May 2024 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/gcp-configure-snapshot-schedule/</guid>
+      <description>前言 保險的功用在於應付未來不確定性風險的一種管理手段，能夠保障人們未來正常的生活。
+定期備份就像是保險，在充滿不確定的網路世界中，保障系統未來正常的運作。
+以下說明 GCP GCE 設定自動備份排程的流程～
+由於部分內容涉及敏感信息，所以選擇在文章中加以遮蔽。
+先決條件 登入 GCP 之 Google 帳號需擁有管理 GCE 的權限 操作步驟 至 GCE 介面，點選要設定 Snapshot schedule 的機器 下滑到 &amp;ldquo;Storage&amp;rdquo; 項目，點擊磁碟機的名稱 到磁碟機管理介面，點擊右上方 &amp;ldquo;EDIT&amp;rdquo; &amp;ldquo;Snapshot schedule&amp;rdquo; 項目，點擊 &amp;ldquo;CREATE A SCHEDULE&amp;rdquo; 依照建立 snapshot schedule 的設定進行說明 Name：為備份排程取名稱 Description：描述此排程 Snapshot storage location：選擇 Snapshot 儲存的地方，可選擇多區域存放，或是單一區域存放 Schedule options：設定排程的頻率、執行時間、以及自動刪除 Snapshot 的時間，執行時間的時區是以 UTC+0 為準，若所在時區不是 UTC+0，需要扣除時區的差距。以台灣為例，台灣為 UTC+8，所以設定上需要扣掉 8 小時 Deletion rule：若是此備份排程綁定的磁碟機被刪除，此排程需要做什麼動作，繼續執行或是刪除超過七天的 Snapshot Application consostency：是否需要等待所有寫入作業完成，再執行備份程序，不啟用此選項，正在等待寫入的程序，不會備份到 Snapshot 內。通常此設定不需要勾選 Snapshot labels：可為此排程設置標籤，方便後續管理 設定完成後，點擊 &amp;ldquo;CREATE&amp;rdquo;</description>
+    </item>
+    
+  </channel>
+</rss>

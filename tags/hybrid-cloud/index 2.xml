@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hybrid Cloud on 姆斯先生的替身</title>
+    <link>https://blog.goodmanjameslian.com/tags/hybrid-cloud/</link>
+    <description>Recent content in Hybrid Cloud on 姆斯先生的替身</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 16 Aug 2024 00:30:00 +0800</lastBuildDate><atom:link href="https://blog.goodmanjameslian.com/tags/hybrid-cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>混合雲架構部署 AD Server</title>
+      <link>https://blog.goodmanjameslian.com/blog/hybrid-cloud-deploy-ad-server/</link>
+      <pubDate>Fri, 16 Aug 2024 00:30:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/hybrid-cloud-deploy-ad-server/</guid>
+      <description>前言 將 AD 的兩台網域控制站（Domain Controller）存放在物理區域上不同位置，除了有高可用性 (High Availability)、負載平衡 (Load Balancing)、容錯能力 (Fault Tolerance)、災難復原 (Disaster Recovery)、簡化管理 (Simplified Management)、擴展性 (Scalability)、提高安全性 (Enhanced Security) 功能外，更能達到異地備援 (Remote Backup) 的效果。</description>
+    </item>
+    
+    <item>
+      <title>混合雲 - VPN 串連雲地環境</title>
+      <link>https://blog.goodmanjameslian.com/blog/hybrid-cloud-vpn-connection/</link>
+      <pubDate>Sat, 27 Jul 2024 15:00:00 +0800</pubDate>
+      
+      <guid>https://blog.goodmanjameslian.com/blog/hybrid-cloud-vpn-connection/</guid>
+      <description>前言 當今許多企業選擇採用混合雲作為他們的網路環境。
+雖然全雲端是未來的趨勢，且雲端環境在安全性和穩定性方面相較於地端機房有明顯優勢。
+然而，多數企業仍然希望內部資料能保存在自己的地端機房中。
+採用混合雲架構也有許多好處：
+靈活性和擴展性：混合雲允許企業根據需求彈性擴展或縮減資源，避免過度或不足的資源配置。 成本效益：企業可以選擇性地將部分工作負載轉移到雲端，避免大量硬體投入，降低資本支出。 提升災難恢復和業務連續性：混合雲有助於在地端發生災難時迅速恢復業務運作，並提升資料的安全性和可用性。 更高的數據安全性和合規性：敏感資料可保留在地端，滿足合規要求，同時利用雲端的安全特性保護其他數據。 改進的性能和響應速度：延遲敏感的應用和數據保留在地端，確保更快速的訪問和響應速度。 支援現有基礎設施：無需完全拋棄現有的IT基礎設施，降低轉移到雲端的成本和風險。 這篇文章將介紹如何使用 VPN 串接雲端及地端環境，以實現兩者之間的無縫連接。</description>
+    </item>
+    
+  </channel>
+</rss>

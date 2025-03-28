@@ -160,6 +160,7 @@
           <h2 id="前言">前言</h2>
 <p>使用金鑰檔案登入 EC2 雖然方便，但需要將金鑰檔案保存在本地端，存在外洩風險，進而增加資安隱患。</p>
 <p>為解決這一問題，AWS 提供了 Session Manager 功能，允許使用者無需金鑰檔案，直接通過 AWS 管理介面安全地登入並操作 EC2。這不僅消除了金鑰外洩的風險，還顯著提升了資安防護水平和管理效率。</p>
+<p>實現無金鑰登入 EC2 Windows Server，可參考 <a href="https://blog.goodmanjameslian.com/blog/aws-sign-in-ec2-windows-server-without-key/">AWS 使用 Session Manager 實現無金鑰安全登入 EC2 Windows Server</a></p>
 <h2 id="先決條件">先決條件</h2>
 <ol>
 <li>EC2 綁定的 Security group，Outbound rule 須開放 443 port</li>
@@ -170,35 +171,35 @@
 <ol>
 <li>至 AWS <em>IAM</em> 服務，<em>Roles</em> 介面，點擊 <strong>Create role</strong></li>
 </ol>
-<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-WITHOUT-KEY/001.%20%e8%87%b3%20IAM%20Role%20%e4%bb%8b%e9%9d%a2%ef%bc%8c%e9%bb%9e%e6%93%8a%20Create%20role.png"
+<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-LINUX-SERVER-WITHOUT-KEY/001.%20%e8%87%b3%20IAM%20Role%20%e4%bb%8b%e9%9d%a2%ef%bc%8c%e9%bb%9e%e6%93%8a%20Create%20role.png"
          alt="001. 至 IAM Role 介面，點擊 Create role" width="2000"/>
 </figure>
 
 <ol start="2">
 <li>選擇 <strong>EC2</strong> 服務作為 IAM Role 綁定之標的</li>
 </ol>
-<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-WITHOUT-KEY/002.%20%e9%81%b8%e6%93%87%e7%b6%81%e5%ae%9a%20EC2.png"
+<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-LINUX-SERVER-WITHOUT-KEY/002.%20%e9%81%b8%e6%93%87%e7%b6%81%e5%ae%9a%20EC2.png"
          alt="002. 選擇綁定 EC2" width="2000"/>
 </figure>
 
 <ol start="3">
 <li>選擇名稱為 <strong>AmazonSSMManagedInstanceCore</strong> 的 IAM Policy</li>
 </ol>
-<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-WITHOUT-KEY/003.%20%e9%81%b8%e6%93%87%20Policy.png"
+<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-LINUX-SERVER-WITHOUT-KEY/003.%20%e9%81%b8%e6%93%87%20Policy.png"
          alt="003. 選擇 Policy" width="2000"/>
 </figure>
 
 <ol start="4">
 <li>設定 IAM Role 名稱，並建立 IAM Role</li>
 </ol>
-<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-WITHOUT-KEY/004.%20%e8%a8%ad%e5%ae%9a%20Role%20%e5%90%8d%e7%a8%b1.png"
+<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-LINUX-SERVER-WITHOUT-KEY/004.%20%e8%a8%ad%e5%ae%9a%20Role%20%e5%90%8d%e7%a8%b1.png"
          alt="004. 設定 Role 名稱" width="2000"/>
 </figure>
 
 <ol start="5">
 <li>建立成功</li>
 </ol>
-<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-WITHOUT-KEY/005.%20%e5%bb%ba%e7%ab%8b%e6%88%90%e5%8a%9f.png"
+<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-LINUX-SERVER-WITHOUT-KEY/005.%20%e5%bb%ba%e7%ab%8b%e6%88%90%e5%8a%9f.png"
          alt="005. 建立成功" width="2000"/>
 </figure>
 
@@ -206,21 +207,21 @@
 <ol start="6">
 <li>至 AWS <em>EC2</em> 服務，<em>Instances</em> 介面，選擇要綁定 IAM Role 的 EC2 instance，點擊 <strong>Modify IAM role</strong></li>
 </ol>
-<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-WITHOUT-KEY/006.%20%e8%87%b3%20EC2%20%e4%bb%8b%e9%9d%a2%ef%bc%8c%e4%bf%ae%e6%94%b9%20IAM%20Role.png"
+<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-LINUX-SERVER-WITHOUT-KEY/006.%20%e8%87%b3%20EC2%20%e4%bb%8b%e9%9d%a2%ef%bc%8c%e4%bf%ae%e6%94%b9%20IAM%20Role.png"
          alt="006. 至 EC2 介面，修改 IAM Role" width="2000"/>
 </figure>
 
 <ol start="7">
 <li>選擇剛剛建立的 IAM Role</li>
 </ol>
-<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-WITHOUT-KEY/007.%20%e9%81%b8%e6%93%87%e5%89%9b%e5%bb%ba%e7%ab%8b%e7%9a%84%20IAM%20Role.png"
+<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-LINUX-SERVER-WITHOUT-KEY/007.%20%e9%81%b8%e6%93%87%e5%89%9b%e5%bb%ba%e7%ab%8b%e7%9a%84%20IAM%20Role.png"
          alt="007. 選擇剛建立的 IAM Role" width="2000"/>
 </figure>
 
 <ol start="8">
 <li>至 <em>Security</em> 項目查看，可看到成功綁定 IAM Role</li>
 </ol>
-<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-WITHOUT-KEY/008.%20%e7%a2%ba%e8%aa%8d%e7%b6%81%e5%ae%9a%e6%88%90%e5%8a%9f.png"
+<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-LINUX-SERVER-WITHOUT-KEY/008.%20%e7%a2%ba%e8%aa%8d%e7%b6%81%e5%ae%9a%e6%88%90%e5%8a%9f.png"
          alt="008. 確認綁定成功" width="2000"/>
 </figure>
 
@@ -228,14 +229,14 @@
 <ol start="9">
 <li>至 AWS <em>Systems Manager</em> 服務，<em>Fleet Manager</em> 介面，點擊要登入的 EC2 instance</li>
 </ol>
-<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-WITHOUT-KEY/009.%20%e8%87%b3%20Systems%20Manager%20Fleet%20Manager%20%e4%bb%8b%e9%9d%a2%ef%bc%8c%e9%bb%9e%e6%93%8a%20EC2.png"
+<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-LINUX-SERVER-WITHOUT-KEY/009.%20%e8%87%b3%20Systems%20Manager%20Fleet%20Manager%20%e4%bb%8b%e9%9d%a2%ef%bc%8c%e9%bb%9e%e6%93%8a%20EC2.png"
          alt="009. 至 Systems Manager Fleet Manager 介面，點擊 EC2" width="2000"/>
 </figure>
 
 <ol start="10">
 <li>點擊 <strong>Start terminal session</strong>，開啟終端顯示畫面</li>
 </ol>
-<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-WITHOUT-KEY/010.%20%e9%bb%9e%e6%93%8a%20Connect.png"
+<figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-LINUX-SERVER-WITHOUT-KEY/010.%20%e9%bb%9e%e6%93%8a%20Connect.png"
          alt="010. 點擊 Connect" width="2000"/>
 </figure>
 
@@ -244,7 +245,7 @@
 </ol>
 <pre tabindex="0"><code>sudo su ec2-user
 cd ~
-</code></pre><figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-WITHOUT-KEY/011.%20%e6%88%90%e5%8a%9f%e7%99%bb%e5%85%a5%20EC2.png"
+</code></pre><figure class="image-frame"><img src="/images/post/AWS-SIGN-IN-EC2-LINUX-SERVER-WITHOUT-KEY/011.%20%e6%88%90%e5%8a%9f%e7%99%bb%e5%85%a5%20EC2.png"
          alt="011. 成功登入 EC2" width="2000"/>
 </figure>
 
