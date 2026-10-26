@@ -1,175 +1,8 @@
-<!DOCTYPE html>
-<html lang="zh-tw"><head>
-  <meta charset="utf-8">
-  <title>姆斯先生的替身</title>
-
-  <!-- mobile responsive meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="便於管理 AWS IAM 使用者權限">
-  <meta name="author" content="James">
-  
-  <meta property="og:image" content="/images/thumbnail.png">
-  <meta property="og:url" content="https://blog.goodmanjameslian.com/blog/aws-iam-policy-template/">
-  <meta property="og:type" content="post">
-
-  
-  <meta property="og:title" content="姆斯先生的替身">
-  <meta property="og:description" content="點擊下去，會有好事發生">
-  <meta property="og:image" content="/images/thumbnail.png">
-  <meta property="og:url" content="">
-
-    
-  
-  <meta name="theme-name" content="liva-hugo" />
-  
-  <meta name="generator" content="Hugo 0.119.0">
-
-  <!-- plugins -->
-  
-  <link rel="stylesheet" href="https://blog.goodmanjameslian.com/plugins/bootstrap/bootstrap.min.css ">
-  
-  <link rel="stylesheet" href="https://blog.goodmanjameslian.com/plugins/slick/slick.css ">
-  
-  <link rel="stylesheet" href="https://blog.goodmanjameslian.com/plugins/themify-icons/themify-icons.css ">
-  
-  <link rel="stylesheet" href="https://blog.goodmanjameslian.com/plugins/venobox/venobox.css ">
-  
-
-  <!-- Main Stylesheet -->
-  
-  <link rel="stylesheet" href="https://blog.goodmanjameslian.com/scss/style.min.css" media="screen">
-
-  <!--Favicon-->
-  <link rel="shortcut icon" href="https://blog.goodmanjameslian.com/images/favicon.png " type="image/x-icon">
-  <link rel="icon" href="https://blog.goodmanjameslian.com/images/favicon.png " type="image/x-icon">
-
-  <!-- google analitycs -->
-  <script>
-    (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-      a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    ga('create', '8619875154', 'auto');
-    ga('send', 'pageview');
-  </script>
-
-</head>
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TWY5J2NRF5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TWY5J2NRF5');
-</script><body>
-<!-- preloader start -->
-<div class="preloader">
-  
-</div>
-<!-- preloader end -->
-<!-- navigation -->
-<header class="navigation">
-  <div class="container">
-    
-    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
-      <a class="navbar-brand mobile-view" href="https://blog.goodmanjameslian.com/"><img class="img-fluid"
-          src="https://blog.goodmanjameslian.com/images/logo-tea2-resized.jpeg" alt="姆斯先生的替身"></a>
-      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
-        <i class="ti-menu"></i>
-      </button>
-      
-      
-      <div class="collapse navbar-collapse text-center" id="navigation">
-        <div class="desktop-view">
-          <ul class="navbar-nav mr-auto">
-            
-          </ul>
-        </div>
-
-        
-        <a class="navbar-brand mx-auto desktop-view" href="https://blog.goodmanjameslian.com/"><img class="img-fluid" src="https://blog.goodmanjameslian.com/images/logo-tea2-resized.jpeg" alt="姆斯先生的替身"></a>
-
-        <ul class="navbar-nav">
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="https://blog.goodmanjameslian.com/">Home</a>
-          </li>
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="https://blog.goodmanjameslian.com/about/">About</a>
-          </li>
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="https://blog.goodmanjameslian.com/blog/">Post</a>
-          </li>
-          
-          
-        </ul>
-
-        
-        <!-- search -->
-        <div class="search pl-lg-4">
-          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
-          <div class="search-wrapper">
-            <form action="https://blog.goodmanjameslian.com//search" class="h-100">
-              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
-            </form>
-            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
-          </div>
-        </div>
-        
-
-        
-      </div>
-    </nav>
-  </div>
-</header>
-<!-- /navigation -->
-
-<section class="section-sm">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 mx-auto">
-        
-        <a href="/categories/proficiency"
-          class="text-primary">Proficiency</a>
-        
-        <h1>AWS IAM 權限架構分享</h1>
-        <div class="mb-3 post-meta">
-          <span>By James</span>
-          
-          <span class="border-bottom border-primary px-2 mx-1"></span>
-          <span>20 June 2024</span>
-          
-        </div>
-        <div class="content mb-5">
-          <h2 id="前言">前言</h2>
-<p>AWS 針對 IAM 建議採用最小權限原則（Least Privilege Principle）控管所有使用者，不過實行上複雜且缺乏彈性。</p>
-<p>此文章分享可使用之權限架構，除了便於劃分權限，也更容易管理，更新權限配置也更簡單。</p>
-<h2 id="權限架構圖">權限架構圖</h2>
-<figure><img src="/images/post/AWS-IAM-POLICY-TEMPLATE/image1.png"
-         alt="Image" width="1000"/>
-</figure>
-
-<h2 id="權限配置說明及-iam-policy-設定">權限配置說明及 IAM Policy 設定</h2>
-<p>因 AWS 帳號內可能會存放不同系統，各系統由不同單位及人員主責維運，故權限方面也要針對專案部分規劃權限配置。</p>
-<h4 id="總管理員">總管理員</h4>
-<p>開放所有權限，可綁定 AWS 管理的 IAM Policy <strong>AdministratorAccess</strong></p>
-<pre tabindex="0"><code>{
+<!doctype html><html lang=zh-tw><head><meta charset=utf-8><title>AWS IAM 權限架構分享 | 姆斯先生的替身</title><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=description content="便於管理 AWS IAM 使用者權限"><meta name=author content="James"><link rel=canonical href=https://blog.goodmanjameslian.com/blog/aws-iam-policy-template/><meta property="og:site_name" content="姆斯先生的替身"><meta property="og:title" content="AWS IAM 權限架構分享 | 姆斯先生的替身"><meta property="og:description" content="便於管理 AWS IAM 使用者權限"><meta property="og:url" content="https://blog.goodmanjameslian.com/blog/aws-iam-policy-template/"><meta property="og:type" content="article"><meta property="og:image" content="https://blog.goodmanjameslian.com/images/post/aws-logo.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="AWS IAM 權限架構分享 | 姆斯先生的替身"><meta name=twitter:description content="便於管理 AWS IAM 使用者權限"><meta name=twitter:image content="https://blog.goodmanjameslian.com/images/post/aws-logo.png"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"James"},"dateModified":"2024-06-20T00:30:00+08:00","datePublished":"2024-06-20T00:30:00+08:00","description":"便於管理 AWS IAM 使用者權限","headline":"AWS IAM 權限架構分享","image":"https://blog.goodmanjameslian.com/images/post/aws-logo.png","mainEntityOfPage":{"@id":"https://blog.goodmanjameslian.com/blog/aws-iam-policy-template/","@type":"WebPage"},"url":"https://blog.goodmanjameslian.com/blog/aws-iam-policy-template/"}</script><meta name=theme-name content="liva-hugo"><meta name=generator content="Hugo 0.168.0"><link rel=stylesheet href=https://blog.goodmanjameslian.com/plugins/bootstrap/bootstrap.min.css><link rel=stylesheet href=https://blog.goodmanjameslian.com/plugins/slick/slick.css><link rel=stylesheet href=https://blog.goodmanjameslian.com/plugins/themify-icons/themify-icons.css><link rel=stylesheet href=https://blog.goodmanjameslian.com/plugins/venobox/venobox.css><link rel=stylesheet href=https://blog.goodmanjameslian.com/scss/style.min.css media=screen><link rel="shortcut icon" href=https://blog.goodmanjameslian.com/images/favicon.png type=image/x-icon><link rel=icon href=https://blog.goodmanjameslian.com/images/favicon.png type=image/x-icon><script>(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","8619875154","auto"),ga("send","pageview")</script></head><script async src="https://www.googletagmanager.com/gtag/js?id=G-TWY5J2NRF5"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-TWY5J2NRF5")</script><body><div class=preloader></div><header class=navigation><div class=container><nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0"><a class="navbar-brand mobile-view" href=https://blog.goodmanjameslian.com/><img class=img-fluid src=https://blog.goodmanjameslian.com/images/logo-tea2-resized.jpeg alt=姆斯先生的替身></a>
+<button class="navbar-toggler border-0" type=button data-toggle=collapse data-target=#navigation>
+<i class=ti-menu></i></button><div class="collapse navbar-collapse text-center" id=navigation><div class=desktop-view><ul class="navbar-nav mr-auto"></ul></div><a class="navbar-brand mx-auto desktop-view" href=https://blog.goodmanjameslian.com/><img class=img-fluid src=https://blog.goodmanjameslian.com/images/logo-tea2-resized.jpeg alt=姆斯先生的替身></a><ul class=navbar-nav><li class=nav-item><a class=nav-link href=https://blog.goodmanjameslian.com/>Home</a></li><li class=nav-item><a class=nav-link href=https://blog.goodmanjameslian.com/about/>About</a></li><li class=nav-item><a class=nav-link href=https://blog.goodmanjameslian.com/blog/>Post</a></li></ul><div class="search pl-lg-4"><button id=searchOpen class=search-btn><i class=ti-search></i></button><div class=search-wrapper><form action=https://blog.goodmanjameslian.com//search class=h-100><input class="search-box px-4" id=search-query name=s type=search placeholder="Type & Hit Enter..."></form><button id=searchClose class=search-close><i class="ti-close text-dark"></i></button></div></div></div></nav></div></header><section class=section-sm><div class=container><div class=row><div class="col-lg-12 mx-auto"><a href=/categories/proficiency class=text-primary>Proficiency</a><h1>AWS IAM 權限架構分享</h1><div class="mb-3 post-meta"><span>By James</span>
+<span class="border-bottom border-primary px-2 mx-1"></span>
+<span>20 June 2024</span></div><div class="content mb-5"><h2 id=前言>前言</h2><p>AWS 針對 IAM 建議採用最小權限原則（Least Privilege Principle）控管所有使用者，不過實行上複雜且缺乏彈性。</p><p>此文章分享可使用之權限架構，除了便於劃分權限，也更容易管理，更新權限配置也更簡單。</p><h2 id=權限架構圖>權限架構圖</h2><figure><img src=/images/post/AWS-IAM-POLICY-TEMPLATE/image1.png alt=Image width=1000></figure><h2 id=權限配置說明及-iam-policy-設定>權限配置說明及 IAM Policy 設定</h2><p>因 AWS 帳號內可能會存放不同系統，各系統由不同單位及人員主責維運，故權限方面也要針對專案部分規劃權限配置。</p><h4 id=總管理員>總管理員</h4><p>開放所有權限，可綁定 AWS 管理的 IAM Policy <strong>AdministratorAccess</strong></p><pre tabindex=0><code>{
     &#34;Version&#34;: &#34;2012-10-17&#34;,
     &#34;Statement&#34;: [
         {
@@ -179,9 +12,7 @@
         }
     ]
 }
-</code></pre><h4 id="總內容管理員">總內容管理員</h4>
-<p>開放除 IAM、Organization、Account 之外所有權限，可綁定 AWS 管理的 IAM Policy <strong>PowerUserAccess</strong></p>
-<pre tabindex="0"><code>{
+</code></pre><h4 id=總內容管理員>總內容管理員</h4><p>開放除 IAM、Organization、Account 之外所有權限，可綁定 AWS 管理的 IAM Policy <strong>PowerUserAccess</strong></p><pre tabindex=0><code>{
     &#34;Version&#34;: &#34;2012-10-17&#34;,
     &#34;Statement&#34;: [
         {
@@ -207,12 +38,7 @@
         }
     ]
 }
-</code></pre><h4 id="總檢視者">總檢視者</h4>
-<p>可使用 AWS 管理的 IAM Policy <strong>ReadOnlyAccess</strong>，由於權限內容過長，暫不列下。</p>
-<h4 id="專案內容管理員">專案內容管理員</h4>
-<p>依照系統有使用到的服務，編列進權限設定中，先給予查看的權限，若服務內項目（Ex：某台 EC2）的 Tag 有符合 Policy 指定的 <strong>Key-Value</strong>，則可以進行編輯的操作。</p>
-<p>通常使用到的服務為 EC2、RDS、WAF、Load Balancer&hellip;等</p>
-<pre tabindex="0"><code>{
+</code></pre><h4 id=總檢視者>總檢視者</h4><p>可使用 AWS 管理的 IAM Policy <strong>ReadOnlyAccess</strong>，由於權限內容過長，暫不列下。</p><h4 id=專案內容管理員>專案內容管理員</h4><p>依照系統有使用到的服務，編列進權限設定中，先給予查看的權限，若服務內項目（Ex：某台 EC2）的 Tag 有符合 Policy 指定的 <strong>Key-Value</strong>，則可以進行編輯的操作。</p><p>通常使用到的服務為 EC2、RDS、WAF、Load Balancer&mldr;等</p><pre tabindex=0><code>{
     &#34;Version&#34;: &#34;2012-10-17&#34;,
     &#34;Statement&#34;: [
         {
@@ -241,9 +67,7 @@
         }
     ]
 }
-</code></pre><h4 id="專案檢視者">專案檢視者</h4>
-<p>依照系統有使用到的服務，編列進權限設定中，並給予查看的權限。</p>
-<pre tabindex="0"><code>{
+</code></pre><h4 id=專案檢視者>專案檢視者</h4><p>依照系統有使用到的服務，編列進權限設定中，並給予查看的權限。</p><pre tabindex=0><code>{
     &#34;Version&#34;: &#34;2012-10-17&#34;,
     &#34;Statement&#34;: [
         {
@@ -265,150 +89,4 @@
         }
     ]
 }
-</code></pre><h4 id="aws-服務使用不分使用者群組">AWS 服務使用（不分使用者群組）</h4>
-<p>此為 AWS 服務（Ex：EC2）需進行 AWS 環境操作時，需給予的權限，也就是 IAM Role。</p>
-<p>因為不像 IAM User 數量多且複雜，依照最小權限原則（Least Privilege Principle）安排權限即可。</p>
-<h4 id="一般使用者不分使用者群組">一般使用者（不分使用者群組）</h4>
-<p>特殊需求之 IAM User，給予所需權限，不包含在群組權限內</p>
-<h2 id="aws-iam-policy-權限配置上的缺陷">AWS IAM Policy 權限配置上的缺陷</h2>
-<p>有關 Describe 的權限不能限制資源（Resource）的範圍，只要限制範圍，AWS 會直接判定對此服務沒有觀看權限，所以完全看不到內容。</p>
-<p>所以上述設定的權限，某一系統的負責人，是可以看到同一 AWS 帳號其他系統的內容，不過其實影響也不大，因為沒有權限對其他系統做修改。</p>
-<h2 id="iam-policy-說明">IAM Policy 說明</h2>
-<p>AWS 針對權限的部分，有著一套運作邏輯，牽連到許多技術知識，若有興趣，可參考 AWS IAM 官方介紹，對權限的部分有詳細的介紹。</p>
-<p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/intro-structure.html">How IAM works</a></p>
-<p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html">IAM JSON policy elements reference</a></p>
-<h2 id="結語">結語</h2>
-<p>以上分享 IAM 權限設定的架構，適合應用在企業雲端環境，單一 AWS 帳號有多個系統運行或開發。</p>
-<p>可參考此架構管理 IAM User，簡單且易操作，節省管理時間。</p>
-<p>希望這篇文章能啟發您更進一步的學習和研究，感謝您耐心閱讀。如果您有任何相關問題或想要討論，請隨時寄信給我，我們一起來探討吧！</p>
-
-        </div>
-
-        
-        
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<footer class="text-capitalize">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 text-center mb-5">
-        <a href="https://blog.goodmanjameslian.com/"><img src="https://blog.goodmanjameslian.com/images/logo-tea2-resized.jpeg" alt="姆斯先生的替身"></a>
-      </div>
-               
-      <div class="col-lg-3 col-sm-6 mb-5">
-        <h6 class="mb-4">Contact Me</h6>
-        <ul class="list-unstyled">
-          
-                     
-          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Taipei, New Taipei City</li>
-          
-                     
-          <li class="mb-3"><a class="text-dark" href="mailto:j6040650604@yahoo.com.tw"><i
-                class="ti-email mr-3 text-primary"></i>j6040650604@yahoo.com.tw</a>
-          
-          </li>
-        </ul>
-      </div>
-      
-      
-      <div class="col-lg-3 col-sm-6 mb-5">
-        <h6 class="mb-4">Categories</h6>
-        <ul class="list-unstyled">
-          <li class="mb-3"><a class="text-dark"
-              href="/categories/proficiency/">Proficiency</a>
-          </li>
-          <li class="mb-3"><a class="text-dark"
-              href="/categories/reading/">Reading</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-3 col-sm-6 mb-5">
-        <h6 class="mb-4">Quick Links</h6>
-        <ul class="list-unstyled">
-          
-          <li class="mb-3"><a class="text-dark" href="https://blog.goodmanjameslian.com/about/">About</a></li>
-          
-          <li class="mb-3"><a class="text-dark" href="https://blog.goodmanjameslian.com/blog/">Post</a></li>
-          
-        </ul>
-      </div>
-      <div class="col-12 border-top py-4 text-center">
-        
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-  var indexURL = "https://blog.goodmanjameslian.com/index.json"
-</script>
-
-<!-- JS Plugins -->
-
-<script src="https://blog.goodmanjameslian.com/plugins/jQuery/jquery.min.js"></script>
-
-<script src="https://blog.goodmanjameslian.com/plugins/bootstrap/bootstrap.min.js"></script>
-
-<script src="https://blog.goodmanjameslian.com/plugins/slick/slick.min.js"></script>
-
-<script src="https://blog.goodmanjameslian.com/plugins/venobox/venobox.min.js"></script>
-
-<script src="https://blog.goodmanjameslian.com/plugins/search/fuse.min.js"></script>
-
-<script src="https://blog.goodmanjameslian.com/plugins/search/mark.js"></script>
-
-<script src="https://blog.goodmanjameslian.com/plugins/search/search.js"></script>
-
-<!-- Main Script -->
-
-<script src="https://blog.goodmanjameslian.com/js/script.min.js"></script>
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
-<div id="js-cookie-box" class="cookie-box cookie-box-hide">
-	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
-</div>
-<script>
-	(function ($) {
-		const cookieBox = document.getElementById('js-cookie-box');
-		const cookieButton = document.getElementById('js-cookie-button');
-		if (!Cookies.get('cookie-box')) {
-			cookieBox.classList.remove('cookie-box-hide');
-			cookieButton.onclick = function () {
-				Cookies.set('cookie-box', true, {
-					expires:  2 
-				});
-				cookieBox.classList.add('cookie-box-hide');
-			};
-		}
-	})(jQuery);
-</script>
-
-
-<style>
-.cookie-box {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  z-index: 9999;
-  padding: 1rem 2rem;
-  background: rgb(71, 71, 71);
-  transition: all .75s cubic-bezier(.19, 1, .22, 1);
-  color: #fdfdfd;
-}
-
-.cookie-box-hide {
-  display: none;
-}
-</style>
-</body>
-</html>
+</code></pre><h4 id=aws-服務使用不分使用者群組>AWS 服務使用（不分使用者群組）</h4><p>此為 AWS 服務（Ex：EC2）需進行 AWS 環境操作時，需給予的權限，也就是 IAM Role。</p><p>因為不像 IAM User 數量多且複雜，依照最小權限原則（Least Privilege Principle）安排權限即可。</p><h4 id=一般使用者不分使用者群組>一般使用者（不分使用者群組）</h4><p>特殊需求之 IAM User，給予所需權限，不包含在群組權限內</p><h2 id=aws-iam-policy-權限配置上的缺陷>AWS IAM Policy 權限配置上的缺陷</h2><p>有關 Describe 的權限不能限制資源（Resource）的範圍，只要限制範圍，AWS 會直接判定對此服務沒有觀看權限，所以完全看不到內容。</p><p>所以上述設定的權限，某一系統的負責人，是可以看到同一 AWS 帳號其他系統的內容，不過其實影響也不大，因為沒有權限對其他系統做修改。</p><h2 id=iam-policy-說明>IAM Policy 說明</h2><p>AWS 針對權限的部分，有著一套運作邏輯，牽連到許多技術知識，若有興趣，可參考 AWS IAM 官方介紹，對權限的部分有詳細的介紹。</p><p><a href=https://docs.aws.amazon.com/IAM/latest/UserGuide/intro-structure.html>How IAM works</a></p><p><a href=https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html>IAM JSON policy elements reference</a></p><h2 id=結語>結語</h2><p>以上分享 IAM 權限設定的架構，適合應用在企業雲端環境，單一 AWS 帳號有多個系統運行或開發。</p><p>可參考此架構管理 IAM User，簡單且易操作，節省管理時間。</p><p>希望這篇文章能啟發您更進一步的學習和研究，感謝您耐心閱讀。如果您有任何相關問題或想要討論，請隨時寄信給我，我們一起來探討吧！</p></div></div></div></div></section><footer class=text-capitalize><div class=container><div class="row justify-content-center"><div class="col-12 text-center mb-5"><a href=https://blog.goodmanjameslian.com/><img src=https://blog.goodmanjameslian.com/images/logo-tea2-resized.jpeg alt=姆斯先生的替身></a></div><div class="col-lg-3 col-sm-6 mb-5"><h6 class=mb-4>Contact Me</h6><ul class=list-unstyled><li class=mb-3><i class="ti-location-pin mr-3 text-primary"></i>Taipei, New Taipei City</li><li class=mb-3><a class=text-dark href=mailto:j6040650604@yahoo.com.tw><i class="ti-email mr-3 text-primary"></i>j6040650604@yahoo.com.tw</a></li></ul></div><div class="col-lg-3 col-sm-6 mb-5"><h6 class=mb-4>Categories</h6><ul class=list-unstyled><li class=mb-3><a class=text-dark href=/categories/proficiency/>Proficiency</a></li><li class=mb-3><a class=text-dark href=/categories/reading/>Reading</a></li></ul></div><div class="col-lg-3 col-sm-6 mb-5"><h6 class=mb-4>Quick Links</h6><ul class=list-unstyled><li class=mb-3><a class=text-dark href=https://blog.goodmanjameslian.com/about/>About</a></li><li class=mb-3><a class=text-dark href=https://blog.goodmanjameslian.com/blog/>Post</a></li></ul></div><div class="col-12 border-top py-4 text-center"></div></div></div></footer><script>var indexURL="https://blog.goodmanjameslian.com/index.json"</script><script src=https://blog.goodmanjameslian.com/plugins/jQuery/jquery.min.js></script><script src=https://blog.goodmanjameslian.com/plugins/bootstrap/bootstrap.min.js></script><script src=https://blog.goodmanjameslian.com/plugins/slick/slick.min.js></script><script src=https://blog.goodmanjameslian.com/plugins/venobox/venobox.min.js></script><script src=https://blog.goodmanjameslian.com/plugins/search/fuse.min.js></script><script src=https://blog.goodmanjameslian.com/plugins/search/mark.js></script><script src=https://blog.goodmanjameslian.com/plugins/search/search.js></script><script src=https://blog.goodmanjameslian.com/js/script.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js></script><div id=js-cookie-box class="cookie-box cookie-box-hide">This site uses cookies. By continuing to use this website, you agree to their use. <span id=js-cookie-button class="btn btn-sm btn-primary ml-2">I Accept</span></div><script>(function(){const t=document.getElementById("js-cookie-box"),n=document.getElementById("js-cookie-button");Cookies.get("cookie-box")||(t.classList.remove("cookie-box-hide"),n.onclick=function(){Cookies.set("cookie-box",!0,{expires:2}),t.classList.add("cookie-box-hide")})})(jQuery)</script><style>.cookie-box{position:fixed;left:0;right:0;bottom:0;text-align:center;z-index:9999;padding:1rem 2rem;background:#474747;transition:all .75s cubic-bezier(.19,1,.22,1);color:#fdfdfd}.cookie-box-hide{display:none}</style></body></html>
